@@ -1,0 +1,73 @@
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/bluu" type="text/css"/>
+
+<div class="first-block-container" style="background-color: {{ section.settings.bg_color }}">
+  <article
+    class="first-block-background"
+    {{ block.shopify_attributes }}
+           >
+    <style>
+      h1.title{color: {{ section.settings.heading_color }}}
+      h1.title span{color: {{ section.settings.span_color }}}
+    </style>
+    <div class="first-block-wrapper">
+      <h1 class="title" style="font-family: 'BluuNextBold';font-weight: bold;font-style: normal; ">{{ section.settings.title}}</h1>
+      {%- if section.settings.link_text != blank -%}
+      <a class="first-block-link" href="{{ section.settings.link }}">
+        <span class="arrow-right"></span>
+        <span class="first-block-text">{{ section.settings.link_text | escape }}</span>
+        <span class="arrow-left"></span>
+      </a>
+      {%- endif -%}
+    </div>
+  </article>
+</div>
+
+{% schema %}
+{
+  "name": "Alt Block 1",
+  "class": "section-first-block",
+  "settings": [
+		
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Heading"
+        },
+		{
+          "type": "color",
+          "id": "heading_color",
+          "label": "H1 color",
+          "default": "#ffffff"
+        },
+		{
+          "type": "color",
+          "id": "span_color",
+          "label": "Span color",
+          "default": "#000000"
+        },
+		{
+          "id": "link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "id": "link_text",
+          "type": "text",
+          "label": "Link text",
+          "default": "Free Totebag"
+        },
+		{
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background color",
+          "default": "#ed78bd"
+        }
+      ],
+  "presets": [
+    {
+      "category": "Image",
+      "name": "Alt Block 1"
+    }
+  ]
+}
+{% endschema %}

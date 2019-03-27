@@ -1,0 +1,10 @@
+{% layout none %}
+{%- capture product_quickshop_markup -%}
+    {%- include 'product-quickshop' -%}
+  {%- endcapture -%}
+
+  <script
+    type="application/json"
+    data-quickshop-markup>
+    {{ product_quickshop_markup | json }}
+  </script>

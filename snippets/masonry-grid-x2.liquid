@@ -1,0 +1,40 @@
+<article
+  class="
+    masonry-grid
+    masonry-grid-layout-{{ block.settings.layout }}
+     masonry-grid-width-1
+    "
+  data-slideshow-slide
+  data-slideshow-slide-layout="{{ block.settings.layout }}"
+  {{ block.shopify_attributes }}>
+  <figure class="masonry-grid-image figure-left {%- unless block.settings.title -%}full-width{%- endunless -%}">
+    <img 
+        class="image-left"
+        alt="{{ block.settings.image.alt | escape }}"
+        src="{{ block.settings.image | img_url: '1280x', format: 'pjpg' }}"
+        srcset="{{ block.settings.image | img_url: '1280x', scale: 2, format: 'pjpg' }} 2x">
+    
+    <a href="{{block.settings.link}}" style="background-color: {{ block.settings.hover_color }}" class="masonry-hover">
+      <div class="masonry-grid-info">
+        <h2
+            class="masonry-grid-title"{% if block.settings.text_color != blank %}
+            style="color: {{ block.settings.text_color }};"{% endif %}
+            >{{ block.settings.title | escape }}</h2>
+        <div
+             class="masonry-grid-text"{% if block.settings.text_color != blank %}
+             style="color: {{ block.settings.text_color }};"{% endif %}
+             >{{ block.settings.text }}</div>
+        
+        <a class="masonry-grid-link" href="{{ block.settings.link }}"{% if block.settings.text_color != blank %} style="color: {{ block.settings.text_color }};"{% endif %}>
+          {%- if block.settings.link_text != blank -%}
+            <span class="masonry-grid-link-text">{{ block.settings.link_text | escape }}</span>
+            <span class="masonry-grid-link-arrow">{%- include 'icon', id: 'arrow' -%}</span>
+          {%- endif -%}
+        </a>
+        
+      </div>
+    </a>
+    
+  </figure>
+  
+</article>

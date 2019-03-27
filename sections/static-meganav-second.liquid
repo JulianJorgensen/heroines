@@ -1,0 +1,173 @@
+<script
+  type="application/json"
+  data-section-id="{{ section.id }}"
+  data-section-type="static-meganav-second"
+  data-section-data>
+  {
+    "trigger": {{ section.settings.trigger | handleize | json }}
+  }
+</script>
+
+{% assign max_item_count = section.settings.count | times: 1 %}
+{% if section.settings.type == 'titles' %}{% assign max_item_count = 0 %}{% endif %}
+
+<nav
+  data-meganav-clone-source
+  data-nav-trigger
+  class="
+    meganav-menu
+    meganav-menu-{{ section.blocks.size }}
+    {% if section.settings.show_images %}meganav-show-images{% endif %}
+  ">
+
+  <div class="meganav-menu-panel">
+    <div class="meganav-menu-panel-contents">
+      {% for block in section.blocks %}
+        {% assign list = link_list[block.settings] %}
+        {% assign item_count = 0 %}
+		 
+        	
+        {% capture header_tag %}{% if collection == blank %}div{% else %}a{% endif %}{% endcapture %}
+
+        <div class="meganav-menu-group" {{ block.shopify_attributes }}>
+          <{{ header_tag }}
+            href="{{ linklist.url }}"
+            class="
+              meganav-menu-header
+              {% if max_item_count == 0 %}meganav-menu-empty{% endif %}
+            ">
+
+            {% if section.settings.show_images %}
+              {% assign image = block.settings.image %}
+              {% if image == blank %}{% assign image = linklist.image %}{% endif %}
+              
+
+              <div class="meganav-menu-image">
+                {% if image != blank %}
+                  <img src="{{ image | img_url: '520x', format: pjpg }}">
+                {% else %}
+                  {% capture index %}{% cycle '1', '2', '3', '4', '5', '6' %}{% endcapture %}
+                  {{ 'collection-' | append: index | placeholder_svg_tag }}
+                {% endif %}
+              </div>
+            {% endif %}
+
+            <h2 class="meganav-menu-title">
+              {% if linklists[block.settings.menu] != blank %}
+                {{ linklists[block.settings.menu].title }}
+              
+              {% endif %}
+            </h2>
+          </{{ header_tag }}>
+          
+          
+          {% comment %}
+            Sub menu
+          {% endcomment %}
+          {%- if linklists[block.settings.menu].links != blank -%}
+            {% for link in linklists[block.settings.menu].links %}
+              {% assign d = depth | plus: 1 %}
+                <div class="meganav-menu-items">
+                  <div class="meganav-menu-item">
+                    <a class="meganav-menu-link" href="{{ link.url }}">{{ link.title }}</a>
+                  </div>
+                </div>
+            {% endfor %}
+      	  {%- endif -%}
+              
+    	</div>
+
+      {% endfor %}
+    </div>
+  </div>
+</nav>
+
+{% schema %}
+{
+  "name": "Mega second navigation",
+  "class": "meganav meganav-second",
+  "settings": [
+    {
+      "id": "trigger",
+      "type": "text",
+      "label": "Parent link name",
+      "info": "Enter the exact name of the link in your main menu that will act as the top-level link for your mega navigation."
+    },
+    {
+      "id": "show_images",
+      "type": "checkbox",
+      "label": "Show images",
+      "default": true
+    },
+    
+    {
+      "id": "count",
+      "type": "select",
+      "label": "Truncate list after",
+      "options": [
+        { "value": "1", "label": "1 item" },
+        { "value": "2", "label": "2 items" },
+        { "value": "3", "label": "3 items" },
+        { "value": "4", "label": "4 items" },
+        { "value": "5", "label": "5 items" },
+        { "value": "6", "label": "6 items" },
+        { "value": "8", "label": "8 items" },
+        { "value": "10", "label": "10 items" },
+        { "value": "15", "label": "15 items" },
+        { "value": "99", "label": "Don't truncate" }
+      ],
+      "default": "5"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "Sub Menu",
+      "settings": [
+        {
+          "id": "menu",
+          "type": "link_list",
+          "label": "Sub Menu"
+        },
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Custom image",
+          "info": "Pick an image to show instead of the collection's image. 400 x 400px .jpeg recommended"
+        }
+      ]
+    }
+  ],
+  
+  "default": {
+    "blocks": [
+      {
+        "type": "link_list",
+        "settings": {}
+      },
+      {
+        "type": "link_list",
+        "settings": {}
+      },
+      {
+        "type": "link_list",
+        "settings": {}
+      },
+      {
+        "type": "link_list",
+        "settings": {}
+      }
+    ]
+  },
+  "locales": {
+    "en": {
+      "all_products": "Show all",
+      "onboarding": {
+        "menu": "Submenu"
+        
+      }
+    }
+  }
+}
+
+{% endschema %}

@@ -1,0 +1,15 @@
+{% comment %}
+  A shared price component, with compare at price, and regular price
+
+  @param variant
+{% endcomment %}
+
+<div class="product-price tk-sofia-pro">
+  <span class="money money-compare-at{% if variant.compare_at_price == blank %} money-compare-at-hidden{% endif %}" data-variant-compare-at-price>
+    {{ variant.compare_at_price | money_without_trailing_zeros }}
+  </span>
+ 
+  <span class="money tk-sofia-pro" data-variant-price>
+    {{ variant.price | money_without_trailing_zeros }}
+  </span>
+</div>

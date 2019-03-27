@@ -1,0 +1,31 @@
+{% comment %}
+  A shared page header, with title and subtitle.
+
+  @param title
+  @param subtitle
+{% endcomment %}
+
+{%- if page.handle == 'search-results-page' -%}
+<div id="overlay-trigger" onclick="showOverlay();"><img src="https://cdn.shopify.com/s/files/1/2137/0833/files/GO-AROUND.png?14299570652221716401" class="logo-image"/></div>
+<div class="first-block-overlay">
+  <div class="product-quickshop-backdrop visible"></div>
+  <div class="circle">
+    <a href="javascript:void(0);" onclick="removeOverlay();" class="close"><img src="https://cdn.shopify.com/s/files/1/2137/0833/files/close.png?16219246897750399045" /></a>
+    <div class="overlay-info">
+      <h2>Hej!</h2>
+      <div class="desc">Heroines er et nyt smykke- og butikskoncept.<br/>Alt, der møder dig her, vil være et selektivt mix af<br/>kendte mærker og morgendagens stjerner inden for<br/> smykker og accessories.</div>
+      <img src="https://cdn.shopify.com/s/files/1/2137/0833/files/GO-AROUND.png?14299570652221716401" class="logo-image"/>
+      <a href="{{ shop.url }}/pages/about" class="more">Læs mere</a>
+    </div>
+  </div>
+</div>
+  <div class="search-image-left"><img src="https://cdn.shopify.com/s/files/1/2137/0833/files/image-left-transparent.png?4984276561741121554" alt="Heroines"/></div>
+{%- endif -%}
+
+<header class="masthead">
+  <h1 class="masthead-title page-{{ page.handle }}">{{ title }}</h1>
+
+  {% if subtitle != blank %}
+    <h2 class="masthead-subtitle">{{ subtitle }}</h2>
+  {% endif %}
+</header>

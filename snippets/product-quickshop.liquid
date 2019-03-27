@@ -1,0 +1,120 @@
+{%- assign variant = product.selected_or_first_available_variant -%}
+{%- assign img_count = product.images | size -%}
+
+<div
+  class="product-quickshop-backdrop"
+  data-quickshop>
+  <script
+    type="application/json"
+    data-quickshop-data>
+    {
+      "product": {{ product | json }},
+      "selected_or_first_available_variant": {{ product.selected_or_first_available_variant | json }},
+      "money_format": {{ shop.money_format | json }},
+      "text": {
+        "product_available": {{ 'product.add_to_cart.available' | t | json }},
+        "product_unavailable": {{ 'product.add_to_cart.unavailable' | t | json }}
+      }
+    }
+  </script>
+  <section class="product-quickshop">
+    <div class="product-quickshop-details-container" data-quickshop-container>
+      <button
+        class="product-quickshop-button-dismiss"
+        type="button"
+        aria-label="{{ 'general.form.close' | t }}"
+        data-product-quickshop-button-dismiss>
+        {%- include 'icon', id: 'close' -%}
+      </button>
+      {%- if product.images.size > 1 -%}
+        <section class="product-quickshop-image-thumbnails">
+          {%- if img_count > 3 -%}
+          <button
+            class="product-quickshop-image-thumbnails-button-up"
+            type="button"
+            aria-label="{{ 'general.form.close' | t }}"
+            data-product-quickshop-image-thumbnails-button-up
+            onclick="scrollUp();">
+            {%- include 'icon', id: 'arrow' -%}
+          </button>
+          {%- endif -%}
+          <div class="product-quickshop-image-thumbnails-slide" data-product-quickshop-image-thumbnails-slide>
+            <div class="move-container">
+            {%- for image in product.images -%}
+              <figure
+                class="
+                  product-quickshop-image-thumbnail
+                  {% if variant.featured_image.id == image.id %}product-quickshop-image-thumbnail-selected{% endif %}
+                ">
+                <img
+                  alt="{{ image.alt | escape }}"
+                  src="{{ image | img_url: '145x', format: 'pjpg' }}"
+                  srcset="{{ image | img_url: '145x', scale: 2, format: 'pjpg' }} 2x"
+                  data-product-image-thumb
+                  data-product-image-id="{{ image.id }}"
+                  data-src="{{ image | img_url: '1050x', format: 'pjpg' }}"
+                  data-srcset="{{ image | img_url: '1050x', scale: 2, format: 'pjpg' }} 2x">
+              </figure>
+            {%- endfor -%}
+            </div>
+          </div>
+          {%- if img_count > 3 -%}
+          <button
+            class="product-quickshop-image-thumbnails-button-down"
+            type="button"
+            aria-label="{{ 'general.form.close' | t }}"
+            data-product-quickshop-image-thumbnails-button-down
+            onclick="scrollDown();">
+            {%- include 'icon', id: 'arrow' -%}
+          </button>
+          {%- endif -%}
+        </section>
+      {%- endif -%}
+      <section class="product-quickshop-featured-image">
+        {%- assign image = variant.image -%}
+        {%- if image == blank -%}
+          {%- assign image = product.featured_image -%}
+        {%- endif -%}
+        <figure class="product-quickshop-image" >
+          <img
+            alt="{{ image.alt | escape }}"
+            src="{{ image | img_url: '1050x', format: 'pjpg' }}"
+            srcset="{{ image | img_url: '1050x', scale: 2, format: 'pjpg' }} 2x"
+            data-product-image-featured>
+        </figure>
+      </section>
+      <section class="product-quickshop-details">
+        <h1 class="product-title">{{ product.title }}</h1>
+        <h3 class="product-vendor">By {{ product.vendor }}</h3>
+        {%- include 'product-price', variant: product.selected_or_first_available_variant -%}
+		<div id="dd-restock-notification-container"{% if product.available == false %} class="stock-form-visible"{% endif %} style="margin-top: 0; margin-bottom: 40px;">
+            <div id=dd-restock-notification-msg>
+              <div id=dd-restock-notification-msg-success style="display: none">{{shop.metafields.da-restock.success}}</div>
+              <div id=dd-restock-notification-msg-error style="display: none">{{shop.metafields.da-restock.error}}</div>
+            </div>
+            {% for variant in product.variants %}
+            {% unless variant.available %}
+            <div class="da-restock-notification" id="da-restock-notification-variant-{{variant.id}}" {%- if product.available == true -%} style="display:none"{%- endif -%}>
+              <form action='https://alertmerestockalerts.herokuapp.com/addemail' method='post'>
+                <p>{{shop.metafields.da-restock.productText}}</p>
+                <input type=text placeholder='{{shop.metafields.da-restock.productInput}}' name=email />
+                <input type=hidden name=store value={{shop.permanent_domain}} />
+                <input type=hidden name=product value={{product.id}} />
+                <input type=hidden name=url value={{product.url}} />
+                <input type=hidden id=da-restock-variant name=variant value={{ variant.id }} />
+                <button onclick="submitStockForm(this);" class=btn type=button name=submit>{{shop.metafields.da-restock.productButton}}</button>
+              </form>
+            </div>
+            {% endunless %}
+            {% endfor %}
+          </div>
+        <div class="product-rte">
+          {{ product.description | split: '~section 2~' | first | truncate: 120 }} <a class="read-more" href="{{ product.url | within: collection }}"> Læs mere</a> 
+        </div>
+               
+                
+      </section>
+      {%- include 'product-menu', product: product -%}
+    </div>
+  </section>
+</div>

@@ -1,0 +1,228 @@
+{% capture added_to_cart_link %}
+  {% include 'icon', id: 'checkmark' %}
+  {{ 'product.added_to_cart_link_html' | t }}
+{% endcapture %}
+
+{% if section.settings.enable_menu_form %}
+  {% assign enable_inline_form = false %}
+{% else %}
+  {% assign enable_inline_form = true %}
+{% endif %}
+
+
+<script
+  type="application/json"
+  data-section-type="static-product"
+  data-section-id="{{ section.id }}"
+  data-section-data>
+  {
+    "product": {{ product | json }},
+    "selected_or_first_available_variant": {{ product.selected_or_first_available_variant | json }},
+    "money_format": {{ shop.money_format | json }},
+    "form_is_inline": {{ enable_inline_form | json }},
+    "text": {
+      "added_to_cart_link": {{ added_to_cart_link | json }},
+      "product_available": {{ 'product.add_to_cart.available' | t | json }},
+      "product_unavailable": {{ 'product.add_to_cart.unavailable' | t | json }}
+    }
+  }
+</script>
+
+{%- assign on_sale = false -%}
+
+{%- for variant in product.variants -%}
+  {%- if variant.price < variant.compare_at_price -%}
+    {%- assign on_sale = true -%}
+  {%- endif -%}
+{%- endfor -%}
+
+
+{% if enable_inline_form %}
+  <div class="product-alert">
+    <div class="product-alert-content">
+      <div class="product-alert-dismiss">{% include 'icon', id: 'close' %}</div>
+      <div class="product-alert-message"></div>
+    </div>
+  </div>
+{% endif %}
+
+<div
+  class="product-wrapper {% if product.images.size == 0 %}product-wrapper-no-images{% endif %}"
+  data-product-wrapper
+>
+  {%- if product.images.size > 0 -%}
+    <section class="product-images" data-product-images>
+      {%- for image in product.images -%}
+        <figure
+          class="product-image"
+          data-product-image
+          data-product-image-index="{{ forloop.index0 }}"
+          data-product-image-id="{{ image.id }}"
+        >
+          <img
+            alt="{{ image.alt | escape }}"
+            src="{{ image | img_url: '1050x', format: 'pjpg' }}"
+            srcset="{{ image | img_url: '1050x', scale: 2, format: 'pjpg' }} 2x">
+        </figure>
+      {%- endfor -%}
+      {%- if product.available != true -%}
+          <span class="product-item-badge">{{ 'product.item.availability.out_of_stock' | t }} <img src="https://cdn.shopify.com/s/files/1/2137/0833/files/sale_stars.png?13367119583111324498" class="sale-stars"/></span>
+       {%- elsif on_sale -%}
+          <span class="product-item-badge sale-bagde">{{ 'product.item.badges.on_sale' | t }} <img src="https://cdn.shopify.com/s/files/1/2137/0833/files/sale_stars.png?13367119583111324498" class="sale-stars"/></span>
+        {%- endif -%}
+    </section>
+  {%- endif -%}
+
+  <section class="product-details product-details-relative" data-product-details>
+    {% if enable_inline_form %}
+      {% include 'breadcrumbs' %}
+    {% endif %}
+
+    <h1 class="product-title">{{ product.title }}</h1>
+    <h3 class="product-vendor">By {{ product.vendor | link_to_vendor }}</h3>
+    {%- include 'product-price', variant: product.selected_or_first_available_variant -%}
+
+    {% include 'product-form-nojs' %}
+
+    {% if enable_inline_form %}
+      {% include 'product-form-inline' %}
+    {% endif %}
+
+    {% if enable_inline_form and section.settings.enable_social_sharing %}
+      {% include 'share-buttons' %}
+    {% endif %}
+    {% comment %}
+	<div id="esc-oos-form"></div>
+    {% endcomment %}
+    {% include 'da-restock' %}
+    
+    <div class="product-rte">
+      <div class="product-rte">
+      <div id="tabs"{%- if product.available != true -%} style="margin-top: 20px;" {%- endif -%}>
+         <ul>
+           <li><a href="#tab-1" class="active">Noter</a></li>
+           <li><a href="#tab-2">Detajler</a></li>
+           <li><a href="#tab-3">Forsendelse</a></li>
+           <li><a href="#tab-4">SPØRGSMÅL</a></li>
+         </ul>
+         <div id="tab-1">
+           {{ product.description | split: '~section 2~' | first }}
+         </div>
+         <div id="tab-2">
+           {{ product.description | split: '~section 2~' | last }}
+         </div>
+         <div id="tab-3">
+           {{ pages.shipping.content }}
+         </div>
+         <div id="tab-4">
+           {{ pages.other.content }}
+         </div>   
+       </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% if enable_inline_form == false %}
+  {%- include 'product-menu' -%}
+{% endif %}
+
+{%- for block in section.blocks -%}
+  {%- assign product_count = block.settings.product_count | times: 1 -%}
+
+  <section class="section-related-products" {{ block.shopify_attributes }}>
+    <span class="related-products-title">{{ 'related_products.title' | t }}</span>
+    {%- include 'product-highlights',
+      product_item_style: block.settings.product_item_style,
+      use_quickshop: block.settings.enable_product_quickshop,
+      product_count: product_count,
+      product_emphasize: block.settings.product_emphasize
+    -%}
+  </section>
+{%- endfor -%}
+
+{% schema %}
+{
+  "name": "Product pages",
+  "class": "section-product",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_menu_form",
+      "label": "Enable bottom menu",
+      "default": true,
+      "info": "Displays product options and breadcrumbs in a sticky bottom menu."
+    },
+    {
+      "type": "header",
+      "content": "Sharing"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_social_sharing",
+      "label": "Enable social sharing",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "related_products",
+      "name": "Related products",
+      "settings": [
+        {
+          "id": "product_item_style",
+          "type": "select",
+          "label": "Product aspect ratio",
+          "info": "Using an uncropped setting will generate white space around the image to create a uniform grid without cropping your image. The background in the editor indicates the applied white space, but will not appear on your storefront.",
+          "options": [
+            { "group": "Uncropped", "value": "natural", "label": "Natural" },
+            { "group": "Uncropped", "value": "small", "label": "Short (4:3)" },
+            { "group": "Uncropped", "value": "medium", "label": "Square (1:1)" },
+            { "group": "Uncropped", "value": "large", "label": "Tall (2:3)" },
+            { "group": "Cropped", "value": "cropped-small", "label": "Short (4:3)" },
+            { "group": "Cropped", "value": "cropped-medium", "label": "Square (1:1)" },
+            { "group": "Cropped", "value": "cropped-large", "label": "Tall (2:3)" }
+          ],
+          "default": "natural"
+        },
+        {
+          "id": "enable_product_quickshop",
+          "type": "checkbox",
+          "label": "Enable product quickshop",
+          "default": false
+        },
+        {
+          "id": "product_count",
+          "type": "select",
+          "label": "Product count",
+          "options": [
+            { "value": "1", "label": "1" },
+            { "value": "2", "label": "2" },
+            { "value": "3", "label": "3" },
+            { "value": "4", "label": "4" },
+            { "value": "5", "label": "5" }
+          ],
+          "default": "5"
+        },
+        {
+          "id": "product_emphasize",
+          "type": "checkbox",
+          "label": "Emphasize product",
+          "info": "Creates an alternate layout on larger screens",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "max_blocks": 1,
+  "default": {
+    "blocks": [
+      {
+        "type": "related_products",
+        "settings": {}
+      }
+    ]
+  }
+}
+
+{% endschema %}

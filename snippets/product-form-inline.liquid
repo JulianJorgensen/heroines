@@ -1,0 +1,16 @@
+<form class="product-form-inline" method="post" action="/cart/add" data-product-form-inline>
+  {% include 'product-options', type: 'select' %}
+
+  <div class="product-form-inline-atc">
+    {% include 'quantity' %}
+
+    <button
+      class="product-form-inline-atc-button"
+      type="submit"
+      data-product-atc
+    >
+      {{ 'product.add_to_cart.available' | t }}
+    </button>
+  </div>
+
+</form>

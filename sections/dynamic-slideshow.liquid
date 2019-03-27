@@ -1,0 +1,178 @@
+<script
+  type="application/json"
+  data-section-type="dynamic-slideshow"
+  data-section-id="{{ section.id }}"
+  data-section-data>
+  {
+    "autoplay": {{ section.settings.autoplay | json }},
+    "slide_count": {{ section.blocks.size | json }}
+  }
+</script>
+
+<div class="slideshow slideshow-slides-{{ section.blocks.size }}" data-slideshow>
+  {%- for block in section.blocks -%}
+    {%- include 'slideshow-slide' -%}
+  {%- endfor -%}
+</div>
+
+{% schema %}
+{
+  "name": "Slideshow",
+  "class": "section-slideshow",
+  "settings": [
+    {
+      "id": "autoplay",
+      "type": "select",
+      "label": "Autoplay",
+      "options": [
+        {
+          "group": "Autoplay delay",
+          "value": "3000",
+          "label": "3 seconds"
+        },
+        {
+          "group": "Autoplay delay",
+          "value": "4000",
+          "label": "4 seconds"
+        },
+        {
+          "group": "Autoplay delay",
+          "value": "5000",
+          "label": "5 seconds"
+        },
+        {
+          "group": "Autoplay delay",
+          "value": "6000",
+          "label": "6 seconds"
+        },
+        {
+          "group": "Autoplay delay",
+          "value": "7000",
+          "label": "7 seconds"
+        },
+        {
+          "group": "Autoplay delay",
+          "value": "8000",
+          "label": "8 seconds"
+        },
+        {
+          "group": "Autoplay delay",
+          "value": "9000",
+          "label": "9 seconds"
+        },
+        {
+          "group": "Autoplay delay",
+          "value": "10000",
+          "label": "10 seconds"
+        },
+        {
+          "value": "-1",
+          "label": "Off"
+        }
+      ],
+      "default": "-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Image"
+        },
+        {
+          "id": "layout",
+          "type": "select",
+          "label": "Text layout",
+          "info": "Only affects desktop devices and tablets in landscape mode",
+          "options": [
+            {
+              "group": "Default",
+              "value": "default-left",
+              "label": "Left"
+            },
+            {
+              "group": "Default",
+              "value": "default-right",
+              "label": "Right"
+            },
+            {
+              "group": "Full width",
+              "value": "full-width-left",
+              "label": "Left"
+            },
+            {
+              "group": "Full width",
+              "value": "full-width-center",
+              "label": "Center"
+            },
+            {
+              "group": "Full width",
+              "value": "full-width-right",
+              "label": "Right"
+            }
+          ],
+          "default": "default-left"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "info": "Only affects desktop devices and tablets in landscape mode",
+          "default": "#292929"
+        },
+		{
+          "id": "before_title",
+          "type": "text",
+          "label": "Before Heading"
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Heading",
+          "default": "Slide"
+        },
+        {
+          "id": "text",
+          "type": "richtext",
+          "label": "Text",
+          "default": "<p>Introduce customers to your shop with lifestyle imagery and product photography.</p>"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "id": "link_text",
+          "type": "text",
+          "label": "Link text",
+          "default": "Slide link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "category": "Image",
+      "name": "Slideshow",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "layout": "default-right"
+          }
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

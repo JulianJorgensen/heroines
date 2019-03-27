@@ -1,0 +1,22 @@
+<article class="page page-{{ page.handle }}-wrapper">
+  {% include 'masthead', title: page.title %}
+  <div class="page-content">
+  	{{ page.content }}
+
+    <div id="gaveguide-grid">
+      {% for link in linklists.gaveguide.links %}
+        {% assign handle = link.title %}
+        {% for collection in collections %}
+          {% if collection.url == link.url %}
+            <div class="gaveguide-item">
+              <h1 class="gaveguide-title">{{ link.title | escape }}</h1>
+              <a href="{{ link.url | escape }}"><div class="gaveguide-image" style="background-image: url({{ collection.image | img_url: 'large' }})"></div></a>
+              <div class="gaveguide-description">{{ collection.description }}</div>
+              <a class="gaveguide-cta" href="{{ link.url | escape }}">Shop nu</a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</article>

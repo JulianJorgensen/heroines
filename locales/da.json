@@ -1,0 +1,419 @@
+{
+  "general": {
+    "form": {
+      "first_name": "Fornavn",
+      "last_name": "Efternavn",
+      "name": "Navn",
+      "name_placeholder": "Dit navn",
+      "email": "Email",
+      "email_placeholder": "ditnavn@ditwebsite.com",
+      "message": "Kommentarer",
+      "message_placeholder": "Dine kommentarer",
+      "password_placeholder": "Indtast password",
+      "repeat_password": "Gentag password",
+      "company": "Firma",
+      "address_1": "Adresse",
+      "address_2": "Adresse 2",
+      "city": "By",
+      "country": "Land",
+      "zip": "Postnummer",
+      "phone": "Telefon",
+      "cancel": "Annuller",
+      "submit": "Send",
+      "password": "Password"
+    },
+    "social": {
+      "share": "Del på",
+      "email": "Email"
+    }
+  },
+  "404": {
+    "title": "Siden blev ikke fundet",
+    "subtitle": "Beklager – vi kunne ikke finde siden",
+    "back_to_home": "Tilbage til websitet"
+  },
+  "password": {
+    "title": "",
+    "enter_password": "Log in"
+  },
+  "customers": {
+    "activate_account": {
+      "header": "Aktiver konto",
+      "submit": "Aktiver konto",
+      "decline_activation": "Afvis invitation"
+    },
+    "addresses": {
+      "header": "Mine adresser",
+      "edit": "Rediger",
+      "delete": "Slet",
+      "add_new_address": "Tilføj ny adresse",
+      "default_address_message": "Adresse",
+      "set_default": "Vælg som standard",
+      "submit": "Tilføj adresse",
+      "update": "Opdater adresse",
+      "form": {
+        "add_new_heading": "Tilføj ny adresse",
+        "edit_existing_heading": "Rediger adresse"
+      },
+      "addresses": {
+        "heading": "Adresser"
+      }
+    },
+    "guest_checkout": {
+      "header": "Guest checkout header",
+      "submit": "Guest checkout submit"
+    },
+    "account": {
+      "header": "Min konto",
+      "order_history": "Ordrehistorik",
+      "order": "Ordre",
+      "payment": "Betaling",
+      "fulfillment": "Status",
+      "total": "Total",
+      "default_address": "Adresse",
+      "view_addresses": "Se adresser ({{ count }})",
+      "empty": "Du har ingen ordrer",
+      "new_address_link": "Tilføj ny adresse",
+      "logout": "Log ud"
+    },
+    "reset_password": {
+      "header": "Nulstil password",
+      "submit": "Genskab password",
+      "message": "Nulstil password for {{ user }}"
+    },
+    "register": {
+      "header": "Opret konto",
+      "submit": "Opret"
+    },
+    "new_customer": {
+      "header": "Ny kunde?",
+      "message": "Opret en konto og bevæg dig hurtigere gennem checkout. Du kan også gemme flere leveringsadresser, få adgang til din ordrehistorik og meget mere. "
+    },
+    "order": {
+      "header": "Ordre {{ order_number }}",
+      "shipping_address": "Leveringsadresse",
+      "billing_address": "Faktureringsadresse",
+      "item": "Produkt",
+      "title": "Titel",
+      "options": "Indstillinger",
+      "price": "Pris",
+      "quantity": "Antal",
+      "tax": "Moms",
+      "shipping": "Fragt",
+      "subtotal": "Subtotal",
+      "total": "Total",
+      "discounts": "Rabat ({{ code }})"
+    },
+    "login": {
+      "header": "Log ind",
+      "forgot_your_password": "Glemt dit password?",
+      "recover_password_message": "Vi sender dig en mail, så du kan nulstille dit password.",
+      "submit": "Log ind"
+    }
+  },
+  "cart": {
+    "notes": "Specielle instrukser",
+    "title": "Kurv",
+    "view_cart": "Se kurv",
+    "empty": "Din kurv er tom",
+    "button_checkout_title": "Checkout",
+    "button_update_shipping_title": "Opdater shipping",
+    "button_cancel_shipping_title": "Annuller",
+    "button_calculate_shipping_title": "Beregn fragtpris",
+    "button_update_shipping_disabled_title": "Regner...",
+    "totals": {
+      "subtotal_title": "Subtotal"
+    }
+  },
+  "collection": {
+    "tags_empty": "There are no products matching your search",
+    "empty": "Beklager – ingen produkter matchede dine valg.",
+    "sort_by": {
+      "best_selling": "Bedst sælgende",
+      "created_descending": "Ældste til nyeste",
+      "created_ascending": "Nyeste til ældste",
+      "title_descending": "Z-A",
+      "title_ascending": "A-Z",
+      "price_descending": "Pris: Høj til lav",
+      "price_ascending": "Pris: Lav til høj",
+      "manual": "Fremhævet",
+      "button_title": "Sorter",
+      "title": "Sorter"
+    },
+    "refine": {
+      "title": "Filtrèr",
+      "button_title": "Filtrér produkter"
+    }
+  },
+  "article": {
+    "author": "Af {{ author }}",
+    "comments_count": {
+      "zero": "Kommentarer",
+      "one": "{{ count }} kommentar",
+      "other": "{{ count }} kommentarer"
+    },
+    "comments": {
+      "title": "Kommentarer",
+      "leave_a_comment": "Kommenter ",
+      "submit": "Udgiv kommentar",
+      "comment_pending": "Din kommentar afventer moderation.",
+      "comment_success": "Din kommentar er udgivet.",
+      "comment_error": "Hov. Noget gik galt."
+    },
+    "pagination": {
+      "blog": "Tilbage til Journal",
+      "previous": "Forrige",
+      "next": "Næste"
+    },
+    "excerpt": {
+      "read_more": "Læs"
+    }
+  },
+  "title": {
+    "tags": "— Tagged \"{{ tags }}\"",
+    "page": "— Side {{ page }}",
+    "shop": "— {{ shop }}"
+  },
+  "newsletter": {
+    "subscribe": "Send",
+    "placeholder": "INDTAST EMAIL",
+    "success_title": "Velkommen!",
+    "success": "Tak for at du har tilmeldt dig nyhedsbrevet."
+  },
+  "pagination": {
+    "prev": "Forrige",
+    "next": "Næste"
+  },
+  "product": {
+    "quickshop_cta": "Vis mere om produktet",
+    "added_to_cart": "Tilføjet til kurv",
+    "select_options": "Vælg variant",
+    "continue_shopping": "Fortsæt shopping",
+    "view_cart": "Vis kurv",
+    "added_to_cart_link_html": "Tilføjet til kurv <a href=\"\/cart\">Til kurv og checkout.<\/a>",
+    "share": "Del",
+    "item": {
+      "badges": {
+        "on_sale": "Udsalg"
+      },
+      "price": {
+        "on_sale_html": "Udsalg {{ price }}",
+        "on_sale_range_html": "Udsalg fra {{ price }}",
+        "range_html": "Fra {{ price }}"
+      },
+      "availability": {
+        "out_of_stock": "Udsolgt"
+      }
+    },
+    "add_to_cart": {
+      "available": "Læg i kurv",
+      "unavailable": "Udsolgt"
+    },
+    "onboard": {
+      "title": "Produkttitel"
+    }
+  },
+  "header": {
+    "account": {
+      "title": "Konto",
+      "login": "Log ind"
+    }
+  },
+  "related_products": {
+    "title": "Relaterede produkter"
+  },
+  "contact": {
+    "form": {
+      "phone": "Telefonnummer",
+      "message": "Besked",
+      "email": "Email",
+      "name": "Navn",
+      "submit": "Send besked",
+      "success": "Tak for din besked. Vi vender tilbage hurtigst muligt."
+    }
+  },
+  "giftcard": {
+    "redeem": {
+      "title": "Gavekort",
+      "balance_remaining": "({{ balance }} tilbage)",
+      "instructions": "Brug denne kode ved kassen til at indløse dit gavekort",
+      "add_to_apple_wallet": "Tilføj til Apple Wallet",
+      "shop_link": "Start din shopping",
+      "expires": "Udløber den {{ date }}",
+      "expired": "Udløbet den {{ date }}",
+      "disabled": "Beklager – dette gavekort er deaktiveret"
+    }
+  },
+  "search": {
+    "results": {
+      "product_count": "Produkter ({{ count }})",
+      "page_count": "Sider ({{ count }})",
+      "article_count": "Journal ({{ count }})",
+      "results_count": {
+        "zero": "Ingen resultater fundet",
+        "one": "{{ count }} resultater fundet for \"{{ query }}\"",
+        "other": "{{ count }} resultater fundet for \"{{ query }}\""
+      },
+      "title": "Søgeresultat"
+    },
+    "form": {
+      "cancel": "Annuller",
+      "title": "Søg",
+      "placeholder": "Indtast søgeord..."
+    }
+  },
+  "structured_data": {
+    "breadcrumbs": {
+      "cart": "Kurv",
+      "collections": "Kollektioner",
+      "page": "Side {{ page }}",
+      "products": "Produkter",
+      "search": "Søg",
+      "tags": "Tagged \"{{ tags }}\""
+    }
+  },
+  "product_filter_search": {
+    "clear": "Nulstil",
+    "clear_all": "NULSTIL ALLE",
+    "refine": "Filtre valgt:",
+    "refine_mobile": "Filtre valgt:"
+  },
+  "sections": {
+    "dynamic-blog-posts": {
+      "onboarding": {
+        "title": "Indlæg",
+        "article-excerpt": {
+          "date": "3. nov, 1971"
+        }
+      }
+    },
+    "dynamic-mobile-collections": {
+      "all_products": "Vis alle"
+    },
+    "site-footer": {
+      "footnav": {
+        "about": {
+          "title": "Om"
+        },
+        "account": {
+          "login": "Log ind",
+          "logout": "Log ud",
+          "register": "Opret konto",
+          "logged_in_html": "Logget ind som {{ user_name }}"
+        }
+      },
+      "copyright_html": "Copyright &copy; {{ year }} {{ shop_name }}."
+    },
+    "static-contactbar": {
+      "phone_title": "Ring",
+      "email_title": "Kontakt",
+      "directions_title": "Find butik",
+      "hours_title": "Butiksinfo"
+    },
+    "static-megamenu": {
+      "all_products": "Vis alle"
+    },
+    "static-meganav-second": {
+      "all_products": "Vis alle"
+    },
+    "static-meganav": {
+      "all_products": "Vis alle"
+    }
+  },
+  "date_formats": {
+    "short_day_month_year": "%d. %b, %Y"
+  },
+  "shopify": {
+    "links": {
+      "powered_by_shopify": "Drevet af OCC"
+    },
+    "pagination": {
+      "previous": "Forrige",
+      "next": "Næste"
+    },
+    "checkout": {
+      "contact": {
+        "country_placeholder": "Land",
+        "country_label": "Land",
+        "postal_code_placeholder": "Postnummer",
+        "zip_code_placeholder": "Postnummer",
+        "optional_phone_label": "Telefon (valgfri)",
+        "shipping_address_title": "Adresse",
+        "title": "Adresse",
+        "customer_information_title": "Email",
+        "address_title": "Skal sendes til:"
+      },
+      "order_summary": {
+        "taxes_label": "Moms",
+        "vat_label_html": "Inklusiv {{ amount }} i moms",
+        "paid_label": "Betalt"
+      },
+      "payment": {
+        "billing_address_title": "Adresse",
+        "title": "Betaling "
+      },
+      "payment_summary": {
+        "billing_address_title": "Adresse"
+      },
+      "general": {
+        "back_to_cart": "Tilbage til kurv",
+        "edit_shipping_address": "Rediger adresse",
+        "continue_to_shipping_method": "Trin 2: Videre til valg af fragt",
+        "back_to_shipping_method": "Tilbage til valg af fragt",
+        "cart": "Kurv",
+        "back_to_contact_information": "Tilbage til adresse",
+        "edit_shipping_method": "Rediger fragt",
+        "continue_to_payment_method": "Trin 3. Videre til betaling",
+        "continue_to_review": "Trin 4: Videre til endelig bekræftelse"
+      },
+      "shipping": {
+        "title": "Fragt",
+        "please_enter_your_shipping_information_notice": "Indtast din adresse"
+      },
+      "newsletter": {
+        "subscription_checkbox_label": "Ja tak til fantastiske nyheder i min inbox!"
+      },
+      "customer_account": {
+        "save_my_information_label": "Ja tak! Gem min information, så jeg hurtigere kan tjekke ud næste gang."
+      },
+      "field_errors": {
+        "email_invalid": "Indtast en gyldig email-adresse",
+        "email_or_phone_blank": "Indtast en gyldig email-adresse eller telefonnummer",
+        "address_first_name_blank": "Indtast dit fornavn",
+        "address_last_name_blank": "Indtast dit efternavn",
+        "address_address1_blank": "Indtast din adresse",
+        "address_city_blank": "Indtast din by",
+        "address_address2_blank": "Indtast din lejlighed, etage e.a.",
+        "address_country_blank": "Indtast dit land",
+        "address_company_blank": "Indtast dit firmanavn",
+        "address_phone_blank": "Indtast et gyldigt telefonnummer",
+        "address_zip_blank": "Indtast dit postnummer"
+      },
+      "review": {
+        "title": "Ordretjek"
+      }
+    },
+    "addresses": {
+      "postal_code": "Postnummer",
+      "zip_code": "Postnummer"
+    },
+    "attributes": {
+      "password": "Password",
+      "password_confirmation": "Bekræftelse af password"
+    },
+    "notices": {
+      "order": {
+        "fulfillment_status": {
+          "fulfilled": "Fuldført",
+          "unfulfilled": "Ikke fuldført",
+          "partial": "Delvist fuldført"
+        },
+        "financial_status": {
+          "paid": "Betalt",
+          "unpaid": "Ikke betalt",
+          "partially_paid": "Delvist betalt"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{% comment %}
+  @param menu LinkedList
+         The menu handle to look up.
+
+  @param depth Number
+         The starting depth to use for the class names.
+
+  @param max_depth Number
+         The maximum depth to traverse.
+
+  @param is_submenu Bool
+         Add submenu classes
+{% endcomment %}
+
+<ul class="navmenu navmenu-depth-{{ depth }} {% if is_submenu %}navmenu-submenu{% endif %}">
+  {% assign is_submenu = false %}
+
+  {% for link in linklists[menu].links %}
+    {% assign d = depth | plus: 1 %}
+	<li class="navmenu-item navmenu-id-{{ link.handle }}" {% if forloop.index == 1 or forloop.index == 2 %}data-meganav-mobile-target{% endif %}>
+      <a class="navmenu-link" href="{{ link.url }}">{{ link.title }}</a>
+      {% if forloop.index == 1 or forloop.index == 2 %}<span class="expand-arrow-wrapper"><span class="expand-arrow"></span></span>{% endif %}
+      </li>
+  {% comment %}
+    {% if d > max_depth or linklists[link.handle] == blank %}
+      
+    {% else %}
+      <li class="navmenu-item navmenu-item-parent navmenu-id-{{ link.handle }}" data-nav-trigger>
+        <a class="navmenu-link navmenu-link-parent" href="{{ link.url }}">{{ link.title }}</a>
+        {% include 'navmenu',
+          menu: link.handle,
+          depth: d,
+          max_depth: max_depth,
+          is_submenu: true
+        %}
+      </li>
+    {% endif %}
+  {% endcomment %}
+  {% endfor %}
+  <li class="navmenu-item navmenu-id-om-heroines">
+    <a class="navmenu-link" href="/pages/om-heroines">Om Heroines</a>
+  </li>
+  <li class="navmenu-item navmenu-id-jobs">
+    <a class="navmenu-link" href="/pages/jobs">Jobs</a>
+  </li>
+  <li class="navmenu-item navmenu-id-shop-instagram">
+    <a class="navmenu-link" href="/pages/shop-instagram">Shop Instagram</a>
+  </li>
+  <li class="navmenu-item navmenu-id-konto">
+    {% if shop.customer_accounts_enabled and customer %}
+    	<a class="navmenu-link" href="/account">{{ 'header.account.title' | t }}</a>
+    {% else %}
+    	<a class="navmenu-link" href="/account/login">{{ 'header.account.login' | t }}</a>
+    {% endif %}
+  </li>
+</ul>

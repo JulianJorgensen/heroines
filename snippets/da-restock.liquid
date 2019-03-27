@@ -1,0 +1,71 @@
+{% assign alwaysShow = shop.metafields.da-restock.alwaysShow %}
+
+{% if alwaysShow == "true" %}
+    {% assign show = false %}
+    {% assign multipleVariants = false %}
+
+    {% if product.variants.size > 1 %}
+            {% assign multipleVariants = true %}
+    {% endif %}
+
+    {% for variant in product.variants %}
+        {% unless variant.available %}
+            {% assign show = true %}
+        {% endunless %}
+    {% endfor %}
+
+    {% if show %}
+    <div id=dd-restock-notification-container>
+        <div id=dd-restock-notification-msg>
+                <div id=dd-restock-notification-msg-success style="display: none">{{shop.metafields.da-restock.success}}</div>
+                <div id=dd-restock-notification-msg-error style="display: none">{{shop.metafields.da-restock.error}}</div>
+            </div>  
+        <div class="da-restock-notification da-restock-alwaysShow">
+            <form action='https://alertmerestockalerts.herokuapp.com/addemail' method='post'>                        
+                <p>{{shop.metafields.da-restock.productText}}</p>
+
+                    {% if multipleVariants %}
+                    <select name="variant">                          
+                            {% for variant in product.variants %}
+                            {% unless variant.available %}
+                                    <option value={{ variant.id }}>{{ variant.title }} </option>
+                            {% endunless %}
+                            {% endfor %}
+                    </select>
+                    {% else %}
+                            <input type=hidden name=variant value={{product.variants[0].id}} />
+                    {% endif %}                     
+                <input type=text placeholder='{{shop.metafields.da-restock.productInput}}' name=email />
+                <input type=hidden name=store value={{shop.permanent_domain}} />
+                <input type=hidden name=product value={{product.id}} />
+                <input type=hidden name=url value={{product.url}} />
+                <button class=btn type=submit name=submit>{{shop.metafields.da-restock.productButton}}</button>
+            </form>
+        </div>
+    </div>
+    {% endif %}
+
+{% else %}
+    <div id=dd-restock-notification-container>
+            <div id=dd-restock-notification-msg>
+                <div id=dd-restock-notification-msg-success style="display: none">{{shop.metafields.da-restock.success}}</div>
+                <div id=dd-restock-notification-msg-error style="display: none">{{shop.metafields.da-restock.error}}</div>
+            </div>
+            {% for variant in product.variants %}
+                {% unless variant.available %}
+                    <div class="da-restock-notification" id="da-restock-notification-variant-{{variant.id}}" style="display:none">
+                        <form action='https://alertmerestockalerts.herokuapp.com/addemail' method='post'>
+                            <p>{{shop.metafields.da-restock.productText}}</p>
+                            <input type=text placeholder='{{shop.metafields.da-restock.productInput}}' name=email />
+                            <input type=hidden name=store value={{shop.permanent_domain}} />
+                            <input type=hidden name=product value={{product.id}} />
+                            <input type=hidden name=url value={{product.url}} />
+                            <input type=hidden id=da-restock-variant name=variant value={{ variant.id }} />
+                            <button class=btn type=submit name=submit>{{shop.metafields.da-restock.productButton}}</button>
+                        </form>
+                    </div>
+                {% endunless %}
+            {% endfor %}
+    </div>
+{% endif %}
+    

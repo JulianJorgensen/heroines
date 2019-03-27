@@ -1,0 +1,139 @@
+
+<div class="masonry-mobile-title masonry-grid-heading">
+  <h3>{{ section.settings.above_title }}</h3>
+  <h2>{{ section.settings.title }}</h2>
+  <h5>{{ section.settings.below_title }}</h5>
+</div>
+{% if section.settings.title != '' %}
+  <div class="masonry masonry-grids-{{ section.blocks.size }}">
+    {%- for block in section.blocks -%}
+      {% if forloop.first == true %}
+          {%- include 'masonry-grid-x2' -%}
+      {% else %}
+        
+        {% if forloop.index == 5 %}
+          {% if section.settings.title != '' %}
+            {%- include 'masonry-grid-heading' -%}
+          {% endif %}
+    
+          {%- include 'masonry-grid' -%}
+    
+        {% else %}
+        
+            {%- include 'masonry-grid' -%}
+    
+        {% endif %}
+      
+      {% endif %}
+      
+    {%- endfor -%}
+  </div>
+
+{% else %}
+  <div class="feature-grid">
+      {%- for block in section.blocks -%}
+      {% if forloop.first == true %}
+          {%- include 'feature-grid-item-x2' -%}
+      {% else %}
+        
+        {% if forloop.index == 5 %}
+          {% if section.settings.title != '' %}
+            {%- include 'masonry-grid-heading' -%}
+          {% endif %}
+    
+          {%- include 'feature-grid-item' -%}
+    
+        {% else %}
+        
+            {%- include 'feature-grid-item' -%}
+    
+        {% endif %}
+      
+      {% endif %}
+      
+    {%- endfor -%}
+  </div>
+{% endif %}
+  
+<div class="clear"></div>
+
+{% schema %}
+{
+  "name": "Masonry",
+  "class": "section-masonry",
+  "settings" : [
+	{
+      "id": "title",
+      "type": "text",
+      "label": "Heading"
+    },
+    {
+      "id": "above_title",
+      "type": "text",
+      "label": "Above Title"
+    },
+    {
+      "id": "below_title",
+      "type": "text",
+      "label": "Below Title"
+	}
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Grid",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Image"
+        },
+
+		{	
+          "id": "hover_color",
+          "type": "color",
+          "label": "Hover Background Color",
+		  "default" : "#d89499"
+        },
+		
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#292929"
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Heading"
+        },
+       
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "id": "link_text",
+          "type": "text",
+          "label": "Link text"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 200,
+  "presets": [
+    {
+      "category": "Image",
+      "name": "Masonry",
+      "blocks": [
+        {
+          "type": "slide"
+        }
+        
+      ]
+    }
+  ]
+}
+
+{% endschema %}

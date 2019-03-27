@@ -1,0 +1,1443 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Handy",
+    "theme_author": "Pixel Union",
+    "theme_version": "v1.1.1",
+    "theme_documentation_url": "https:\/\/www.pixelunion.net\/support\/handy-theme-manual\/",
+    "theme_support_email": "support@pixelunion.net"
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon image",
+        "info": "32 x 32px .png required"
+      }
+    ]
+  },
+  {
+    "name": "Color",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Background"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent",
+        "info": "Button backgrounds, calls-to-action, and some icons"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_highlighted_menu",
+        "label": "Use highlighted bottom bar",
+        "info": "Applies accent color to background on bottom bar on collection, product, and cart pages on larger screens",
+        "default": false
+      },
+      {
+        "type": "color",
+        "id": "color_title_text",
+        "label": "Headings & menu links"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Body text"
+      },
+      {
+        "type": "color",
+        "id": "color_button_text",
+        "label": "Button text"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "select",
+        "id": "font_title",
+        "label": "Headings",
+        "options": [
+          {
+            "group": "Sans-serif",
+            "label": "Cabin",
+            "value": "Google_Cabin:400,400i,700,700i"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Dosis",
+            "value": "Google_Dosis:300,400,700"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Karla",
+            "value": "Google_Karla:400,400i,700,700i"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Montserrat",
+            "value": "Google_Montserrat:300,300i,400,400i,700,700i"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Muli",
+            "value": "Google_Muli:300,300i,400,400i,700,700i"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Oswald",
+            "value": "Google_Oswald:300,400,700"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Poppins",
+            "value": "Google_Poppins:300,400,700"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Raleway",
+            "value": "Google_Raleway:300,300i,400,400i,700,700i"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Roboto Condensed",
+            "value": "Google_Roboto+Condensed:400,400i,700,700i"
+          },
+          {
+            "group": "Serif",
+            "label": "Bitter",
+            "value": "Google_Bitter:400,400i,700"
+          },
+          {
+            "group": "Serif",
+            "label": "Lora",
+            "value": "Google_Lora:400,400i,700,700i"
+          },
+          {
+            "group": "Serif",
+            "label": "Merriweather",
+            "value": "Google_Merriweather:300,300i,400,400i,700,700i"
+          },
+          {
+            "group": "Serif",
+            "label": "Playfair Display",
+            "value": "Google_Playfair+Display:400,400i,700,700i"
+          },
+          {
+            "group": "Serif",
+            "label": "Prata",
+            "value": "Google_Prata"
+          }
+        ],
+        "default": "Google_Prata"
+      },
+      {
+        "type": "select",
+        "id": "font_body",
+        "label": "Body text",
+        "options": [
+          {
+            "group": "Sans-serif",
+            "label": "Cabin",
+            "value": "Google_Cabin:400,400i,700,700i"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Dosis",
+            "value": "Google_Dosis:300,400,700"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Karla",
+            "value": "Google_Karla:400,400i,700,700i"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Poppins",
+            "value": "Google_Poppins:300,400,700"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Raleway",
+            "value": "Google_Raleway:300,300i,400,400i,700,700i"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Roboto",
+            "value": "Google_Roboto:300,300i,400,400i,700,700i"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Source Sans Pro",
+            "value": "Google_Source+Sans+Pro:300,300i,400,400i,700,700i"
+          },
+          {
+            "group": "Serif",
+            "label": "Bitter",
+            "value": "Google_Bitter:400,400i,700"
+          },
+          {
+            "group": "Serif",
+            "label": "Libre Baskerville",
+            "value": "Google_Libre+Baskerville:400,400i,700"
+          },
+          {
+            "group": "Serif",
+            "label": "Old Standard TT",
+            "value": "Google_Old+Standard+TT:400,400i,700"
+          },
+          {
+            "group": "Serif",
+            "label": "PT Serif",
+            "value": "Google_PT+Serif:400,400i,700,700i"
+          }
+        ],
+        "default": "Google_Karla:400,400i,700,700i"
+      },
+      {
+        "type": "select",
+        "id": "font_label",
+        "label": "Buttons & labels",
+        "options": [
+          {
+            "group": "Sans-serif",
+            "label": "Cabin",
+            "value": "Google_Cabin:400,400i,700,700i"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Dosis",
+            "value": "Google_Dosis:300,400,700"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Karla",
+            "value": "Google_Karla:400,400i,700,700i"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Montserrat",
+            "value": "Google_Montserrat:300,300i,400,400i,700,700i"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Muli",
+            "value": "Google_Muli:300,300i,400,400i,700,700i"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Oswald",
+            "value": "Google_Oswald:300,400,700"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Poppins",
+            "value": "Google_Poppins:300,400,700"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Raleway",
+            "value": "Google_Raleway:300,300i,400,400i,700,700i"
+          },
+          {
+            "group": "Sans-serif",
+            "label": "Roboto",
+            "value": "Google_Roboto:300,300i,400,400i,700,700i"
+          },
+          {
+            "group": "Serif",
+            "label": "Bitter",
+            "value": "Google_Bitter:400,400i,700"
+          },
+          {
+            "group": "Serif",
+            "label": "Lora",
+            "value": "Google_Lora:400,400i,700,700i"
+          },
+          {
+            "group": "Serif",
+            "label": "Merriweather",
+            "value": "Google_Merriweather:300,300i,400,400i,700,700i"
+          },
+          {
+            "group": "Serif",
+            "label": "Playfair Display",
+            "value": "Google_Playfair+Display:400,400i,700,700i"
+          },
+          {
+            "group": "Serif",
+            "label": "Prata",
+            "value": "Google_Prata"
+          }
+        ],
+        "default": "Google_Karla:400,400i,700,700i"
+      }
+    ]
+  },
+  {
+    "name": "Currency",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_currency_converter",
+        "label": "Enable currency conversion",
+        "default": true,
+        "info": "Even though prices are displayed in different currencies, orders will still be processed in your store's currency."
+      },
+      {
+        "type": "select",
+        "id": "currency_display_format",
+        "label": "Format",
+        "options": [
+          {
+            "value": "money_format",
+            "label": "Without currency ($10.00)"
+          },
+          {
+            "value": "money_with_currency_format",
+            "label": "With currency ($10.00 CAD)"
+          }
+        ],
+        "default": "money_with_currency_format"
+      },
+      {
+        "type": "text",
+        "id": "currency_converter_currencies",
+        "label": "Supported currencies",
+        "default": "INR GBP CAD USD AUD EUR JPY DKK",
+        "info": "Use the country's ISO [currency code](http:\/\/www.xe.com\/iso4217.php). Separate your currency codes with a space."
+      },
+      {
+        "type": "text",
+        "id": "currency_converter_default",
+        "label": "Default currency",
+        "default": "DKK"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Accounts"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook",
+        "label": "Facebook",
+        "info": "https:\/\/facebook.com\/pixelunion"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter",
+        "label": "Twitter",
+        "info": "https:\/\/twitter.com\/pixelunion"
+      },
+      {
+        "type": "text",
+        "id": "social_google",
+        "label": "Google+",
+        "info": "https:\/\/plus.google.com\/+shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest",
+        "label": "Pinterest",
+        "info": "https:\/\/pinterest.com\/pixelunion\/"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "label": "Instagram",
+        "info": "https:\/\/instagram.com\/pixelunion"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo",
+        "label": "Vimeo",
+        "info": "https:\/\/vimeo.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube",
+        "label": "YouTube",
+        "info": "https:\/\/youtube.com\/user\/PixelUnionThemes"
+      },
+      {
+        "type": "text",
+        "id": "social_medium",
+        "label": "Medium",
+        "info": "https:\/\/medium.com\/@shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_rss",
+        "label": "RSS",
+        "info": "https:\/\/www.pixelunion.net\/feed\/"
+      },
+      {
+        "type": "text",
+        "id": "social_email",
+        "label": "Email Address",
+        "info": "info@example.com"
+      },
+      {
+        "type": "header",
+        "content": "Sharing options"
+      },
+      {
+        "type": "checkbox",
+        "id": "share_widget_facebook",
+        "label": "Share on Facebook",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_widget_twitter",
+        "label": "Tweet on Twitter",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_widget_pinterest",
+        "label": "Pin on Pinterest",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_widget_google_plus",
+        "label": "+1 on Google Plus",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_widget_email",
+        "label": "Send as an e-mail",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Filter Menu",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Options"
+      },
+      {
+        "type": "checkbox",
+        "id": "pt_show_refine",
+        "label": "Show Refine Section",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "pt_show_collection_group",
+        "label": "Show Current Collection",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "pt_show_clear",
+        "label": "Show Clear buttons",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "pt_show_view_all",
+        "label": "Show View All button",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "pt_show_collection_count",
+        "label": "Show collection count on All page",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "pt_show_show_single_group",
+        "label": "Show groups with only one item",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "pt_single_filter_per_group",
+        "label": "Allow only a single selection per group",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "pt_show_tags_group",
+        "label": "Show unused\/ungrouped tags as a 'Tags' group",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "pt_scroll_filter_group",
+        "label": "Scroll each group if too large",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "pt_show_inactive_filters",
+        "label": "Show inactive filters (greyed out)",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Text"
+      },
+      {
+        "type": "text",
+        "id": "pt_refine_text",
+        "label": "Top of menu text",
+        "default": "Refine"
+      },
+      {
+        "type": "text",
+        "id": "pt_clear_text",
+        "label": "Clear filters text",
+        "default": "clear"
+      },
+      {
+        "type": "text",
+        "id": "pt_view_all_text",
+        "label": "View All text",
+        "default": "view all"
+      },
+      {
+        "type": "text",
+        "id": "pt_tags_text",
+        "label": "Tags group text",
+        "default": "Tags"
+      },
+      {
+        "type": "text",
+        "id": "pt_collection_text",
+        "label": "Collection group text",
+        "default": "Collection"
+      },
+      {
+        "type": "header",
+        "content": "Group Header"
+      },
+      {
+        "type": "color",
+        "id": "color_pt_header_text",
+        "label": "Text",
+        "default": "#222"
+      },
+      {
+        "type": "color",
+        "id": "color_pt_header_border",
+        "label": "Line Underneath",
+        "default": "#DDD"
+      },
+      {
+        "type": "select",
+        "id": "pt_header_size",
+        "label": "Font Size",
+        "options": [
+          {
+            "value": "35px",
+            "label": "35px"
+          },
+          {
+            "value": "30px",
+            "label": "30px"
+          },
+          {
+            "value": "25px",
+            "label": "25px"
+          },
+          {
+            "value": "22px",
+            "label": "22px"
+          },
+          {
+            "value": "20px",
+            "label": "20px"
+          },
+          {
+            "value": "18px",
+            "label": "18px"
+          },
+          {
+            "value": "16px",
+            "label": "16px"
+          },
+          {
+            "value": "15px",
+            "label": "15px"
+          },
+          {
+            "value": "14px",
+            "label": "14px"
+          },
+          {
+            "value": "13px",
+            "label": "13px"
+          },
+          {
+            "value": "12px",
+            "label": "12px"
+          },
+          {
+            "value": "11px",
+            "label": "11px"
+          }
+        ],
+        "default": "18px"
+      },
+      {
+        "type": "select",
+        "id": "pt_header_font",
+        "label": "Base Typeface",
+        "options": [
+          {
+            "value": "none",
+            "label": "Use theme default"
+          },
+          {
+            "value": "Helvetica, Arial, sans-serif",
+            "label": "Helvetica\/Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Impact, Charcoal, Helvetica, Arial, sans-serif",
+            "label": "Impact",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif",
+            "label": "Lucida Grande",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Trebuchet MS, sans-serif",
+            "label": "Trebuchet MS",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Verdana, Helvetica, Arial, sans-serif",
+            "label": "Verdana",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Garamond, Baskerville, Caslon, serif",
+            "label": "Garamond",
+            "group": "Serif"
+          },
+          {
+            "value": "Georgia, Utopia, 'Times New Roman', Times, serif",
+            "label": "Georgia",
+            "group": "Serif"
+          },
+          {
+            "value": "Palatino, 'Palatino Linotype', 'Book Antiqua', serif",
+            "label": "Palatino",
+            "group": "Serif"
+          },
+          {
+            "value": "'Times New Roman', Times, serif",
+            "label": "Times New Roman",
+            "group": "Serif"
+          },
+          {
+            "value": "'Courier New', Courier, monospace",
+            "label": "Courier New",
+            "group": "Monospace"
+          },
+          {
+            "value": "Monaco, 'Lucida Console', 'DejaVu Sans Mono', monospace",
+            "label": "Monaco\/Lucida Console",
+            "group": "Monospace"
+          }
+        ],
+        "default": "none"
+      },
+      {
+        "type": "header",
+        "content": "Filter Links"
+      },
+      {
+        "type": "color",
+        "id": "color_pt_links",
+        "label": "Filters",
+        "default": "#222"
+      },
+      {
+        "type": "color",
+        "id": "color_pt_links_hover",
+        "label": "Filter Hover",
+        "default": "#333"
+      },
+      {
+        "type": "select",
+        "id": "pt_links_size",
+        "label": "Font Size",
+        "options": [
+          {
+            "value": "16px",
+            "label": "16px"
+          },
+          {
+            "value": "15px",
+            "label": "15px"
+          },
+          {
+            "value": "14px",
+            "label": "14px"
+          },
+          {
+            "value": "13px",
+            "label": "13px"
+          },
+          {
+            "value": "12px",
+            "label": "12px"
+          },
+          {
+            "value": "11px",
+            "label": "11px"
+          }
+        ],
+        "default": "12px"
+      },
+      {
+        "type": "select",
+        "id": "pt_links_font",
+        "label": "Base Typeface",
+        "options": [
+          {
+            "value": "none",
+            "label": "Use theme default"
+          },
+          {
+            "value": "Helvetica, Arial, sans-serif",
+            "label": "Helvetica\/Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Impact, Charcoal, Helvetica, Arial, sans-serif",
+            "label": "Impact",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif",
+            "label": "Lucida Grande",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Trebuchet MS, sans-serif",
+            "label": "Trebuchet MS",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Verdana, Helvetica, Arial, sans-serif",
+            "label": "Verdana",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Garamond, Baskerville, Caslon, serif",
+            "label": "Garamond",
+            "group": "Serif"
+          },
+          {
+            "value": "Georgia, Utopia, 'Times New Roman', Times, serif",
+            "label": "Georgia",
+            "group": "Serif"
+          },
+          {
+            "value": "Palatino, 'Palatino Linotype', 'Book Antiqua', serif",
+            "label": "Palatino",
+            "group": "Serif"
+          },
+          {
+            "value": "'Times New Roman', Times, serif",
+            "label": "Times New Roman",
+            "group": "Serif"
+          },
+          {
+            "value": "'Courier New', Courier, monospace",
+            "label": "Courier New",
+            "group": "Monospace"
+          },
+          {
+            "value": "Monaco, 'Lucida Console', 'DejaVu Sans Mono', monospace",
+            "label": "Monaco\/Lucida Console",
+            "group": "Monospace"
+          }
+        ],
+        "default": "none"
+      },
+      {
+        "type": "header",
+        "content": "Checkboxes"
+      },
+      {
+        "type": "checkbox",
+        "id": "pt_show_checkboxes",
+        "label": "Show Checkboxes",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Clear Button"
+      },
+      {
+        "type": "color",
+        "id": "color_pt_clear_bg",
+        "label": "Background",
+        "default": "#EEE"
+      },
+      {
+        "type": "color",
+        "id": "color_pt_clear_text",
+        "label": "Text",
+        "default": "#222"
+      },
+      {
+        "type": "color",
+        "id": "color_pt_clear_bg_hover",
+        "label": "Background Hover",
+        "default": "#DDD"
+      },
+      {
+        "type": "color",
+        "id": "color_pt_clear_text_hover",
+        "label": "Text Hover",
+        "default": "#222"
+      },
+      {
+        "type": "header",
+        "content": "Group Options"
+      },
+      {
+        "type": "text",
+        "id": "pt_small_boxes",
+        "label": "Group handles to show as small boxes",
+        "info": "Separate with commas. This is often the name of group in lower case, however sometimes you may need to use Inspect Element in your browser"
+      },
+      {
+        "type": "color",
+        "id": "color_pt_small_box_bg_hover",
+        "label": "Background Hover",
+        "default": "#222"
+      },
+      {
+        "type": "color",
+        "id": "color_pt_small_box_text_hover",
+        "label": "Text Hover",
+        "default": "#FFF"
+      },
+      {
+        "type": "text",
+        "id": "pt_two_columns",
+        "label": "Group handles to show as two columns",
+        "info": "Separate with commas. "
+      },
+      {
+        "type": "header",
+        "content": "Color Swatches"
+      },
+      {
+        "type": "text",
+        "id": "pt_color_swatches",
+        "label": "Color swatch group handles",
+        "info": "Separate with commas. This is often the name of group in lower case, however sometimes you may need to use Inspect Element in your browser"
+      },
+      {
+        "type": "radio",
+        "id": "pt_color_swatch_type",
+        "label": "Swatch Type",
+        "options": [
+          {
+            "value": "swatch",
+            "label": "Swatch only"
+          },
+          {
+            "value": "swatch_round",
+            "label": "Swatch only (Round)"
+          },
+          {
+            "value": "swatch_text",
+            "label": "Swatch plus text"
+          },
+          {
+            "value": "swatch_text_round",
+            "label": "Swatch plus text (Round)"
+          }
+        ]
+      },
+      {
+        "type": "collection",
+        "id": "pt_color_collection_1",
+        "label": "Additional Color 1"
+      },
+      {
+        "type": "color",
+        "id": "pt_color_1",
+        "label": "Additional Color 1",
+        "default": "#111"
+      },
+      {
+        "type": "image",
+        "id": "pt_image_1.png",
+        "label": "Image file (optional)",
+        "max-width": 30
+      },
+      {
+        "type": "collection",
+        "id": "pt_color_collection_2",
+        "label": "Additional Color 2"
+      },
+      {
+        "type": "color",
+        "id": "pt_color_2",
+        "label": "Additional Color 2",
+        "default": "#222"
+      },
+      {
+        "type": "image",
+        "id": "pt_image_2.png",
+        "label": "Image file (optional)",
+        "max-width": 30
+      },
+      {
+        "type": "collection",
+        "id": "pt_color_collection_3",
+        "label": "Additional Color 3"
+      },
+      {
+        "type": "color",
+        "id": "pt_color_3",
+        "label": "Additional Color 3",
+        "default": "#333"
+      },
+      {
+        "type": "image",
+        "id": "pt_image_3.png",
+        "label": "Image file (optional)",
+        "max-width": 30
+      },
+      {
+        "type": "collection",
+        "id": "pt_color_collection_4",
+        "label": "Additional Color 4"
+      },
+      {
+        "type": "color",
+        "id": "pt_color_4",
+        "label": "Additional Color 4",
+        "default": "#444"
+      },
+      {
+        "type": "image",
+        "id": "pt_image_4.png",
+        "label": "Image file (optional)",
+        "max-width": 30
+      },
+      {
+        "type": "collection",
+        "id": "pt_color_collection_5",
+        "label": "Additional Color 5"
+      },
+      {
+        "type": "color",
+        "id": "pt_color_5",
+        "label": "Additional Color 5",
+        "default": "#555"
+      },
+      {
+        "type": "image",
+        "id": "pt_image_5.png",
+        "label": "Image file (optional)",
+        "max-width": 30
+      },
+      {
+        "type": "collection",
+        "id": "pt_color_collection_6",
+        "label": "Additional Color 6"
+      },
+      {
+        "type": "color",
+        "id": "pt_color_6",
+        "label": "Additional Color 6",
+        "default": "#666"
+      },
+      {
+        "type": "image",
+        "id": "pt_image_6.png",
+        "label": "Image file (optional)",
+        "max-width": 30
+      },
+      {
+        "type": "collection",
+        "id": "pt_color_collection_7",
+        "label": "Additional Color 7"
+      },
+      {
+        "type": "color",
+        "id": "pt_color_7",
+        "label": "Additional Color 7",
+        "default": "#777"
+      },
+      {
+        "type": "image",
+        "id": "pt_image_7.png",
+        "label": "Image file (optional)",
+        "max-width": 30
+      },
+      {
+        "type": "collection",
+        "id": "pt_color_collection_8",
+        "label": "Additional Color 8"
+      },
+      {
+        "type": "color",
+        "id": "pt_color_8",
+        "label": "Additional Color 8",
+        "default": "#888"
+      },
+      {
+        "type": "image",
+        "id": "pt_image_8.png",
+        "label": "Image file (optional)",
+        "max-width": 30
+      },
+      {
+        "type": "collection",
+        "id": "pt_color_collection_9",
+        "label": "Additional Color 9"
+      },
+      {
+        "type": "color",
+        "id": "pt_color_9",
+        "label": "Additional Color 9",
+        "default": "#999"
+      },
+      {
+        "type": "image",
+        "id": "pt_image_9.png",
+        "label": "Image file (optional)",
+        "max-width": 30
+      },
+      {
+        "type": "collection",
+        "id": "pt_color_collection_10",
+        "label": "Additional Color 10"
+      },
+      {
+        "type": "color",
+        "id": "pt_color_10",
+        "label": "Additional Color 10",
+        "default": "#AAA"
+      },
+      {
+        "type": "image",
+        "id": "pt_image_10.png",
+        "label": "Image file (optional)",
+        "max-width": 30
+      },
+      {
+        "type": "collection",
+        "id": "pt_color_collection_11",
+        "label": "Additional Color 11"
+      },
+      {
+        "type": "color",
+        "id": "pt_color_11",
+        "label": "Additional Color 11",
+        "default": "#BBB"
+      },
+      {
+        "type": "image",
+        "id": "pt_image_11.png",
+        "label": "Image file (optional)",
+        "max-width": 30
+      },
+      {
+        "type": "collection",
+        "id": "pt_color_collection_12",
+        "label": "Additional Color 12"
+      },
+      {
+        "type": "color",
+        "id": "pt_color_12",
+        "label": "Additional Color 12",
+        "default": "#CCC"
+      },
+      {
+        "type": "image",
+        "id": "pt_image_12.png",
+        "label": "Image file (optional)",
+        "max-width": 30
+      }
+    ]
+  },
+  {
+    "name": "Filter Menu - Mobile Accordion",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Options"
+      },
+      {
+        "type": "checkbox",
+        "id": "pt_mobile_enable",
+        "label": "Show Mobile Accordion",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "pt_mobile_text",
+        "label": "Filter Button Text",
+        "default": "Filter"
+      },
+      {
+        "type": "color",
+        "id": "pt_mobile_color",
+        "label": "Color",
+        "default": "#222"
+      },
+      {
+        "type": "text",
+        "id": "pt_mobile_max_width",
+        "label": "CSS Max Width For Display",
+        "default": "767px"
+      },
+      {
+        "type": "select",
+        "id": "pt_mobile_vertical",
+        "label": "Vertical Offset",
+        "options": [
+          {
+            "value": "35px",
+            "label": "35px"
+          },
+          {
+            "value": "30px",
+            "label": "30px"
+          },
+          {
+            "value": "25px",
+            "label": "25px"
+          },
+          {
+            "value": "22px",
+            "label": "22px"
+          },
+          {
+            "value": "20px",
+            "label": "20px"
+          },
+          {
+            "value": "18px",
+            "label": "18px"
+          },
+          {
+            "value": "16px",
+            "label": "16px"
+          },
+          {
+            "value": "14px",
+            "label": "14px"
+          },
+          {
+            "value": "12px",
+            "label": "12px"
+          },
+          {
+            "value": "10px",
+            "label": "10px"
+          },
+          {
+            "value": "8px",
+            "label": "8px"
+          },
+          {
+            "value": "6px",
+            "label": "6px"
+          },
+          {
+            "value": "4px",
+            "label": "4px"
+          },
+          {
+            "value": "2px",
+            "label": "2px"
+          },
+          {
+            "value": "0px",
+            "label": "0px"
+          },
+          {
+            "value": "-2px",
+            "label": "-2px"
+          },
+          {
+            "value": "-4px",
+            "label": "-4px"
+          },
+          {
+            "value": "-6px",
+            "label": "-6px"
+          },
+          {
+            "value": "-8px",
+            "label": "-8px"
+          },
+          {
+            "value": "-10px",
+            "label": "-10px"
+          },
+          {
+            "value": "-12px",
+            "label": "-12px"
+          },
+          {
+            "value": "-14px",
+            "label": "-14px"
+          },
+          {
+            "value": "-16px",
+            "label": "-16px"
+          },
+          {
+            "value": "-18px",
+            "label": "-18px"
+          },
+          {
+            "value": "-20px",
+            "label": "-20px"
+          },
+          {
+            "value": "-22px",
+            "label": "-22px"
+          },
+          {
+            "value": "-24px",
+            "label": "-24px"
+          },
+          {
+            "value": "-26px",
+            "label": "-26px"
+          },
+          {
+            "value": "-28px",
+            "label": "-28px"
+          },
+          {
+            "value": "-30px",
+            "label": "-30px"
+          }
+        ],
+        "default": "0px"
+      },
+      {
+        "type": "select",
+        "id": "pt_mobile_text_vertical",
+        "label": "Vertical Offset - Text",
+        "default": "0px",
+        "options": [
+          {
+            "value": "35px",
+            "label": "35px"
+          },
+          {
+            "value": "30px",
+            "label": "30px"
+          },
+          {
+            "value": "25px",
+            "label": "25px"
+          },
+          {
+            "value": "22px",
+            "label": "22px"
+          },
+          {
+            "value": "20px",
+            "label": "20px"
+          },
+          {
+            "value": "18px",
+            "label": "18px"
+          },
+          {
+            "value": "16px",
+            "label": "16px"
+          },
+          {
+            "value": "14px",
+            "label": "14px"
+          },
+          {
+            "value": "12px",
+            "label": "12px"
+          },
+          {
+            "value": "10px",
+            "label": "10px"
+          },
+          {
+            "value": "8px",
+            "label": "8px"
+          },
+          {
+            "value": "6px",
+            "label": "6px"
+          },
+          {
+            "value": "4px",
+            "label": "4px"
+          },
+          {
+            "value": "2px",
+            "label": "2px"
+          },
+          {
+            "value": "0px",
+            "label": "0px"
+          },
+          {
+            "value": "-2px",
+            "label": "-2px"
+          },
+          {
+            "value": "-4px",
+            "label": "-4px"
+          },
+          {
+            "value": "-6px",
+            "label": "-6px"
+          },
+          {
+            "value": "-8px",
+            "label": "-8px"
+          },
+          {
+            "value": "-10px",
+            "label": "-10px"
+          },
+          {
+            "value": "-12px",
+            "label": "-12px"
+          },
+          {
+            "value": "-14px",
+            "label": "-14px"
+          },
+          {
+            "value": "-16px",
+            "label": "-16px"
+          },
+          {
+            "value": "-18px",
+            "label": "-18px"
+          },
+          {
+            "value": "-20px",
+            "label": "-20px"
+          },
+          {
+            "value": "-22px",
+            "label": "-22px"
+          },
+          {
+            "value": "-24px",
+            "label": "-24px"
+          },
+          {
+            "value": "-26px",
+            "label": "-26px"
+          },
+          {
+            "value": "-28px",
+            "label": "-28px"
+          },
+          {
+            "value": "-30px",
+            "label": "-30px"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "pt_mobile_font",
+        "label": "Base Typeface",
+        "options": [
+          {
+            "value": "none",
+            "label": "Use theme default"
+          },
+          {
+            "value": "Helvetica, Arial, sans-serif",
+            "label": "Helvetica\/Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Impact, Charcoal, Helvetica, Arial, sans-serif",
+            "label": "Impact",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif",
+            "label": "Lucida Grande",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Trebuchet MS, sans-serif",
+            "label": "Trebuchet MS",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Verdana, Helvetica, Arial, sans-serif",
+            "label": "Verdana",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Garamond, Baskerville, Caslon, serif",
+            "label": "Garamond",
+            "group": "Serif"
+          },
+          {
+            "value": "Georgia, Utopia, 'Times New Roman', Times, serif",
+            "label": "Georgia",
+            "group": "Serif"
+          },
+          {
+            "value": "Palatino, 'Palatino Linotype', 'Book Antiqua', serif",
+            "label": "Palatino",
+            "group": "Serif"
+          },
+          {
+            "value": "'Times New Roman', Times, serif",
+            "label": "Times New Roman",
+            "group": "Serif"
+          },
+          {
+            "value": "'Courier New', Courier, monospace",
+            "label": "Courier New",
+            "group": "Monospace"
+          },
+          {
+            "value": "Monaco, 'Lucida Console', 'DejaVu Sans Mono', monospace",
+            "label": "Monaco\/Lucida Console",
+            "group": "Monospace"
+          }
+        ],
+        "default": "none"
+      }
+    ]
+  }
+]

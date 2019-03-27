@@ -1,0 +1,15 @@
+<article class="page page-qa">
+  {% include 'masthead', title: page.title %}
+
+  <div class="page-content">
+    {{ page.content }}
+  </div>
+</article>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('ul li h4').click(function(){
+      $(this).next().slideToggle();        
+    });
+  });
+</script>

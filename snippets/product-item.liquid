@@ -1,0 +1,111 @@
+{%- comment -%}
+  A shared product item component
+
+  @param product
+
+  @param product_style
+    What styling should the product image be given
+
+  @param use_badges
+    Whether to display product sale badges or display in-line
+
+  @param use_quickshop
+    Whether to use the quickshop or not
+{%- endcomment -%}
+
+{%- assign product_style = product_style | default: 'natural' -%}
+{%- assign use_badges = use_badges | default: true -%}
+{%- assign on_sale = false -%}
+
+{%- for variant in product.variants -%}
+  {%- if variant.price < variant.compare_at_price -%}
+    {%- assign on_sale = true -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- capture price -%}
+  <span class="money money-compare-at{% if product.compare_at_price == blank %} money-compare-at-hidden{% endif %}" data-variant-compare-at-price>
+    {{ product.compare_at_price | money_without_trailing_zeros }}
+  </span>
+  <span class="money" data-variant-price>
+    {{ product.price_min | money_without_trailing_zeros }} 
+  </span>
+{%- endcapture -%}
+
+
+{%- if product.available == true -%}
+<article class="
+  product-item
+  product-item-style-{{ product_style }}
+  {% unless product.featured_image %}product-item-no-image{% endunless %}"
+  {%- if product.available != true -%}data-oos-id="{{ product.id }}" {%- endif -%} 
+  data-product-item="{{ product.id }}"
+  {%- if use_quickshop -%}data-use-quickshop {%- endif -%}
+  
+         >
+  <a href="{{ product.url | within: collection }}">
+    <figure class="product-item-image tk-sofia-pro" data-product-item-image>
+      {%- if product.featured_image -%}
+        <img
+          alt="{{ product.featured_image.alt | escape }}"
+          src="{{ product.featured_image | img_url: '512x', format: 'pjpg' }}"
+          srcset="{{ product.featured_image | img_url: '512x', scale: 2, format: 'pjpg' }} 2x"
+              {%- if product.available == false -%} class="oos-product" onclick="setupOosForm({{ product.id }})" {%- endif -%}>
+      {%- else -%}
+        {%- capture index -%}
+          {%- cycle '1', '2', '3', '4', '5', '6' -%}
+        {%- endcapture -%}
+        {{ 'product-' | append: index | placeholder_svg_tag }}
+      {%- endif -%}
+      {%- if use_badges -%}
+        {%- if product.available != true -%}
+          <span class="product-item-badge">{{ 'product.item.availability.out_of_stock' | t }} <img src="https://cdn.shopify.com/s/files/1/2137/0833/files/sale_stars.png?13367119583111324498" class="sale-stars"/></span>
+       {%- elsif on_sale -%}
+          <span class="product-item-badge">{{ 'product.item.badges.on_sale' | t }} <img src="https://cdn.shopify.com/s/files/1/2137/0833/files/sale_stars.png?13367119583111324498" class="sale-stars"/></span>
+        {%- endif -%}
+      {%- endif -%}
+    </figure>
+  </a>
+
+  <h2 class="product-item-type">
+    <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+  </h2>
+
+  
+  <h2 class="product-item-title tk-sofia-pro">
+    <a href="{{ product.url | within: collection }}">{{ product.vendor }}</a>
+  </h2>
+
+  <div class="product-price product-item-price tk-sofia-pro">
+    {%- unless use_badges -%}
+      {%- if product.available != true -%}
+        {{ 'product.item.availability.out_of_stock' | t }}
+      {%- elsif on_sale and product.price_varies -%}
+        {{ 'product.item.price.on_sale_range_html' | t: price: price }}
+      {%- elsif on_sale -%}
+        {{ 'product.item.price.on_sale_html' | t: price: price }}
+      {%- elsif product.price_varies -%}
+        {{ 'product.item.price.range_html' | t: price: price }}
+      {%- else -%}
+        {{ price }}
+      {%- endif -%}
+    {%- else -%}
+      {%- if product.price_varies -%}
+        {{ 'product.item.price.range_html' | t: price: price }}
+      {%- else -%}
+        {{ price }}
+      {%- endif -%}
+    {%- endunless -%}
+  </div>
+
+  {%- capture product_quickshop_markup -%}
+    {%- include 'product-quickshop' -%}
+  {%- endcapture -%}
+
+  <script
+    type="application/json"
+    data-quickshop-markup>
+    {{ product_quickshop_markup | json }}
+  </script>
+</article>
+{%- endif -%}

@@ -1,0 +1,44 @@
+<h4 class="section-title">{{ section.settings.title}}</h4>
+{{ section.settings.script_code}}
+<h3 class="section-subtitle">{{ section.settings.subtitle}}</h3>
+
+
+
+{% schema %}
+{
+  "name": "Snappt feed",
+  "class": "section-snappt",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Shop our Instagram"
+    },
+	{
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subheading",
+      "default": "Click an image to shop products"
+    },
+    {
+      "type": "text",
+      "id": "script_code",
+      "label": "Script code"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Social Media",
+      "name": "Shop our Instagram"
+    }
+  ],
+  "locales": {
+    "en": {
+      "onboarding": {
+        "title": "Shop our Instagram"
+      }
+    }
+  }
+}
+{% endschema %}

@@ -1,0 +1,33 @@
+<article
+  class="
+    masonry-grid
+    masonry-grid-layout-{{ block.settings.layout }}
+     masonry-grid-width-1
+    "
+  data-slideshow-slide
+  data-slideshow-slide-layout="{{ block.settings.layout }}"
+  {{ block.shopify_attributes }}>
+        <h2
+            class="masonry-grid-title"
+            >{{ block.settings.title | escape }}</h2>
+  <figure class="masonry-grid-image figure-left {%- unless block.settings.title -%}full-width{%- endunless -%}" style="background-image: url({{ block.settings.image | img_url: '1280x', format: 'pjpg' }});">  
+      <div {% if block.settings.hover_color != blank %} style="background-color: {{ block.settings.hover_color }};"{% endif %} class="bg"></div>
+      <div class="masonry-grid-info">
+        <div
+             class="masonry-grid-text"{% if block.settings.text_color != blank %}
+             style="color: {{ block.settings.text_color }};"{% endif %}
+             >{{ block.settings.text }}</div>
+        
+        <a class="masonry-grid-link" href="{{ block.settings.link }}"{% if block.settings.text_color != blank %} style="color: {{ block.settings.text_color }};"{% endif %}>
+          {%- if block.settings.link_text != blank -%}
+            <span class="masonry-grid-link-text">{{ block.settings.link_text | escape }}</span>
+            <span class="masonry-grid-link-arrow">{%- include 'icon', id: 'arrow' -%}</span>
+          {%- endif -%}
+        </a>
+        
+      </div>
+    </a>
+    
+  </figure>
+  
+</article>

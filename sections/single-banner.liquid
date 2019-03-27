@@ -1,0 +1,187 @@
+
+{%- assign alignment = section.settings.alignment -%}
+
+<div class="collection-featured single-banner-container">
+  <article
+    class="collection-featured-item collection-featured-item-alignment-{{ alignment }} single-banner-product"
+    {{ block.shopify_attributes }}>
+    	
+    	{%- if alignment == 'left' and section.settings.title != blank -%}
+    	<div class="collection-featured-item-info single-banner-info  single-banner-left-info">
+          <h4 class="product-vendor">{{ section.settings.above_title}}</h4>
+          <h2 class="single-banner-title">{{ section.settings.title}}</h2>
+          <div
+            class="single-banner-richtext">{{ section.settings.rich_text }}</div>
+          {%- if section.settings.link_text != blank -%}
+            <a class="single-banner-link" href="{{ section.settings.link }}">
+              <span class="slideshow-slide-link-arrow">{%- include 'icon', id: 'arrow' -%}</span>
+              <span class="single-banner-text">{{ section.settings.link_text | escape }}</span>
+		      <span class="single-banner-link-image"></span>
+            </a>
+          {%- endif -%}
+        </div>
+    	{%- endif-%}
+      <figure class="
+                     collection-featured-item-image  
+                     {%- unless section.settings.title != empty -%} full-width {%- endunless -%}">
+        {%- if section.settings.image -%}
+          <img
+            alt="{{ section.settings.image.alt | escape }}"
+            src="{{ section.settings.image | img_url: '1280x' }}"
+            srcset="{{ section.settings.image | img_url: '1280x', scale: 2 }} 2x">
+        {%- else -%}
+          {{ 'lifestyle-1' | placeholder_svg_tag }}
+        {%- endif -%}
+      </figure>
+		{% if section.settings.title != blank %}
+    	<div class="collection-featured-item-info single-banner-info single-banner-right-info" {% if alignment == 'left' and section.settings.title != blank %}style="display: none;"{% endif%}>
+          <h4 class="product-vendor">{{ section.settings.above_title}}</h4>
+          <h2 class="single-banner-title">{{ section.settings.title}}</h2>
+          <div
+            class="single-banner-richtext">{{ section.settings.rich_text }}</div>
+          {%- if section.settings.link_text != blank -%}
+            <a class="single-banner-link" href="{{ section.settings.link }}">
+              <span class="slideshow-slide-link-arrow">{%- include 'icon', id: 'arrow' -%}</span>
+              <span class="single-banner-text">{{ section.settings.link_text | escape }}</span>
+              <span class="single-banner-link-image"></span>
+            </a>
+          <div class="clear"></div>
+          {%- endif -%}
+        </div>
+    	{% endif%}
+    <div class="single-banner-side-image"></div>
+  </article>
+</div>
+{%- if section.settings.bg_image != blank or section.settings.bg_color != blank -%}
+<style>
+  #shopify-section-{{ section.id }} {
+    padding: 57px 0 !important;
+    {%- if section.settings.bg_image != blank -%}
+      background: url('{{ section.settings.bg_image | img_url: "master" }}') no-repeat center center !important; 
+    
+    {%- endif -%}
+    {%- if section.settings.bg_color != blank -%}
+        background-color: {{ section.settings.bg_color }} ;  
+    {%- endif -%}
+    background-size: cover;
+    max-width: 100% !important;
+    height: 100% !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+    
+  }
+  #shopify-section-{{ section.id }} .single-banner-container {
+  	max-width: 1070px;
+    margin: 0 auto;
+  }
+  #shopify-section-{{ section.id }} .collection-featured-item-info{background-color: #fff;max-height: 535px;}
+  #shopify-section-{{ section.id }} figure{margin: 0;}
+</style>
+{%- else -%}
+<style>
+  #shopify-section-{{ section.id }} {
+    padding-bottom: 0 !important;	    
+  }
+  /*#shopify-section-{{ section.id }} figure img {
+  	filter: invert(3%) !important;-webkit-filter: invert(3%) !important; mix-blend-mode: darken;
+  }*/
+</style>
+
+{%- endif -%}
+
+{%- if section.settings.remove_margins -%}
+	<style>
+		#shopify-section-{{ section.id }}.shopify-section.section-single-banner {
+          margin: -82px auto 1px auto !important;	    
+        }
+      	#shopify-section-{{ section.id }}.shopify-section.section-single-banner figure:after {
+          display: none !Important;
+        }	
+      #shopify-section-{{ section.id }} .collection-featured-item-info .single-banner-link{position: absolute;}
+      @media screen and (max-width: 600px) {
+      	#shopify-section-{{ section.id }}.shopify-section.section-single-banner {
+          margin: -38px auto 1px auto !important;	    
+        }
+      }
+	</style>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Single Banner",
+  "class": "section-single-banner",
+  "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Image"
+        },
+		{
+          "id": "bg_image",
+          "type": "image_picker",
+          "label": "Background Image"
+        },
+		{
+          "id": "bg_color",
+          "type": "color",
+          "label": "Background Color"
+        },
+		{
+          "id": "alignment",
+          "type": "select",
+          "label": "Text alignment",
+          "options": [
+            { "value": "right", "label": "Right" },
+            { "value": "left", "label": "Left" }
+          ],
+          "default": "right"
+        },
+		{
+          "id": "remove_margins",
+          "type": "checkbox",
+          "label": "Remove margins",
+          "default": false
+        },
+		{
+          "id": "rich_text",
+          "type": "richtext",
+          "label": "Text"
+        },
+		{
+          "id": "above_title",
+          "type": "text",
+          "label": "Above Heading"
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Heading",
+          "default": "Banner"
+        },
+		{
+          "id": "link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "id": "link_text",
+          "type": "text",
+          "label": "Link text",
+          "default": "Køb"
+        }
+      ],
+  "presets": [
+    {
+      "category": "Image",
+      "name": "Single Banner"
+    }
+  ],
+  "locales": {
+    "en": {
+      "onboarding": {
+        "title": "Single Banner"
+      }
+    }
+  }
+}
+{% endschema %}

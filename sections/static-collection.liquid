@@ -1,0 +1,371 @@
+<script
+  type="application/json"
+  data-section-type="static-collection"
+  data-section-id="{{ section.id }}"
+  data-section-data>
+  {
+    "shop_url": {{ shop.url | replace_first: 'http:' | json }},
+    "collection_handle": {{ collection.handle | json }},
+    "sort_by": {{ collection.sort_by | default: collection.default_sort_by | json }},
+    "text": {
+      "refine": {{ 'collection.refine.button_title' | t | json }},
+      "apply": {{ 'general.form.apply' | t | json }},
+      "cancel": {{ 'general.form.cancel' | t | json }}
+    }
+  }
+</script>
+
+{%- assign paginate_by = section.settings.products_per_page -%}
+{%- paginate collection.products by paginate_by -%}
+{%- assign vendor_collection = collection.all_vendors | size -%}
+
+	<header
+      class="
+        collection-header
+        collection-header-no-image collection-header-small-font
+        {% unless vendor_collection > 1 %}{%- if collection.handle != 'smykker' and collection.handle != 'smykker' and collection.image -%}collection-vendor {%- endif -%}{% endunless %}
+       	
+      "
+      data-collection-header>
+      {% comment %} {%- if collection.image -%}
+        <figure class="collection-image">
+          <img
+            alt="{{ collection.image.alt | escape }}"
+            src="{{ collection.image | img_url: 'full', format: 'pjpg' }}"
+            srcset="{{ collection.image | img_url: 'full', scale: 2, format: 'pjpg' }} 2x">
+        </figure>
+      {%- endif -%} {% endcomment %}
+      
+      <div class="collection-header-info">
+        {%- if vendor_collection == 1 and collection.handle != 'smykker' and collection.image -%}
+        <a href="/pages/brands" class="brands-go-back"><img src="https://cdn.shopify.com/s/files/1/2137/0833/files/left.png?11762585616958594046"/> Tilbage</a>
+        {%- endif -%}
+        <h1 class="collection-title">{{ collection.title }}</h1>
+        {%- if collection.description -%}
+          {% comment %} <div class="collection-header-description">{{ collection.description }}</div> {% endcomment %}
+        {%- endif -%}
+      </div>
+    </header>
+
+    {%- if collection.products.size == 0 -%}
+      <p class="collection-empty">
+        {%- if collection.all_products_count == 0 -%}
+          {{ 'collection.empty' | t }}
+        {%- else if collection.products.size == 0 and vendor_collection == 1 -%}
+          {{ 'collection.tags_empty' | t }}
+        {%- endif -%}
+      </p>
+	{%- else -%}
+		{%- if vendor_collection == 1 and collection.handle != 'smykker' and collection.image  -%}
+			<h3 class="products-count">{{ collection.products.size }} Produkter</h3>
+		{%- endif -%}
+    {%- endif -%}
+	
+	{% if collection.handle != null and collection.image == null or vendor_collection > 1  or collection.handle == 'smykker' %}
+    	{% comment %} <div class="bc-sf-filter-wrapper-main"> {% endcomment %}
+         {% comment %} {%- include 'collection-menu' -%}  {% endcomment %}
+          {% comment %}<div id="bc-sf-filter-top-sorting"></div>{% endcomment %}
+          {% comment %}<div id="bc-sf-filter-tree-mobile"></div>{% endcomment %}
+          {% comment %} <div id="bc-sf-filter-tree"></div>
+          <div class="bc-sf-filter-tree-h-wrapper">
+            <div id="bc-sf-filter-tree-h"></div>
+            <div class="clear"></div>
+          </div>
+          <div class="clear"></div>
+        </div>   {% endcomment %}
+  {% endif %}
+	
+  <div
+    class="collection-grid
+      collection-grid-uninit
+      product-item-style-{{ section.settings.product_item_style }}"
+    data-collection-grid>
+    <div id="side-filter-container" class="clearfix">   
+  <div class="side-filter-menu closed">    
+    {% include 'filter-menu' %}
+    <div class="clear"></div>
+  </div>
+  <div class="main-filter-content">
+    
+    {% comment %}
+	{%- if collection.image -%}
+	<header
+      class="
+        collection-header
+        {% unless collection.image %}collection-header-no-image{% endunless %}
+        {% if collection.handle != 'smykker' and collection.handle != 'accessories' %} collection-header-small-font {% endif %}
+      "
+      data-collection-header>
+      {%- if collection.image -%}
+        <figure class="collection-image">
+          <img
+            alt="{{ collection.image.alt | escape }}"
+            src="{{ collection.image | img_url: '600x', format: 'pjpg' }}"
+            srcset="{{ collection.image | img_url: '600x', scale: 2, format: 'pjpg' }} 2x">
+        </figure>
+      {%- endif -%}
+      <div class="collection-header-info">
+        <h1 class="collection-title">{{ collection.title }}</h1>
+        {%- if collection.description -%}
+          <div class="collection-header-description">{{ collection.description }}</div>
+        {%- endif -%}
+      </div>
+    </header>
+	{%- endif -%}
+    {% endcomment %}
+    
+    {%- if collection.products.size == 0 -%}
+      {% comment %}<p class="collection-empty">
+        {%- if collection.all_products_count == 0 -%}
+          {{ 'collection.empty' | t }}
+        {%- else -%}
+          {{ 'collection.tags_empty' | t }}
+        {%- endif -%}
+      </p>{% endcomment %}
+    {%- endif -%}
+      <div id="bc-sf-filter-products">
+        {%- for product in collection.products  -%}
+          {%- assign index_based_on_page = paginate.current_offset | plus: forloop.index -%}
+          <div
+            class="collection-grid-item"
+            data-collection-grid-item>
+            {%- include 'product-item',
+              product_style: section.settings.product_item_style,
+              product_cropped: section.settings.product_item_crop,
+              use_quickshop: section.settings.enable_product_quickshop
+            -%}
+          </div>
+          {%- for block in section.blocks -%}
+            {%- assign block_index = block.settings.index | times: 1 -%}
+        
+            {%- if block.settings.collection == blank or block.settings.collection == collection.handle -%}
+        
+              {%- if block_index == index_based_on_page -%}
+                {%- assign advertisement = block -%}
+                  {%- if block.settings.image -%}
+                 	<div class="collection-grid-item collection-grid-item-advertisement" {{ block.shopify_attributes }} style="background-image: url('{{ block.settings.image | img_url: '1280x', format: 'pjpg' }}')" data-collection-grid-item>
+                  {%- else if -%}
+                  	<div class="collection-grid-item collection-grid-item-advertisement" {{ block.shopify_attributes }} style="background-color: {{ block.settings.bg_color }}" data-collection-grid-item>
+                  {%- else -%}
+                  	<div class="collection-grid-item collection-grid-item-advertisement" {{ block.shopify_attributes }} data-collection-grid-item>
+                  {%- endif -%}
+                  <p class="collection-grid-item-advertisement-text">{{ advertisement.settings.text}}</p>
+                  <a class="collection-grid-item-advertisement-link" href="{{ advertisement.settings.link }}">
+                    <span class="collection-grid-item-advertisement-link-text">{{ advertisement.settings.link_text | escape }}</span>
+                    <span class="collection-grid-item-advertisement-link-arrow"><img src="https://cdn.shopify.com/s/files/1/2137/0833/files/arrow-right-white.png?2176491824982670483" /></span>
+                  </a>
+                </div>
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endfor -%}
+      </div>
+    </div>
+</div>
+
+{%- unless paginate.next -%}
+      {%- for block in section.blocks -%}
+        {%- assign block_index = block.settings.index | times: 1 -%}
+        {%- if block.settings.collection == collection.handle and block_index > index_based_on_page -%}
+          {%- assign advertisement = block -%}
+          <div class="collection-grid-item collection-grid-item-advertisement" {{ block.shopify_attributes }} data-collection-grid-item>
+            <p class="collection-grid-item-advertisement-text">{{ advertisement.settings.text }}</p>
+            <a class="collection-grid-item-advertisement-link" href="{{ advertisement.settings.link }}">
+              <span class="collection-grid-item-advertisement-link-text">{{ advertisement.settings.link_text | escape }}</span>
+              <span class="collection-grid-item-advertisement-link-arrow">{%- include 'icon', id: 'arrow' -%}</span>
+            </a>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endunless -%}
+  </div>
+      
+
+  <ul id="bc-sf-filter-bottom-pagination" class="pagination"></ul>
+{%- endpaginate -%}
+
+<script>
+  // Declare bcSfFilterConfig variable
+  var bcSfFilterConfig = {
+    shop: {
+      apiUrl: 'https://services.mybcapps.com/bc-sf-filter/filter',
+      name: '{{ shop.name | escape }}',
+      url: '{{ shop.url }}',
+      domain: '{{ shop.permanent_domain }}',
+      currency: '{{ shop.currency }}',
+      money_format: '{{ shop.money_format }}'
+    },
+    general: {
+      file_url: "{{ '' | file_url }}",
+      asset_url: "{{ 'bc-sf-filter.js' | asset_url }}",
+      collection_id: {{ collection.id | default: 0 }},
+      collection_handle: "{{ collection.handle }}",
+      {% for tag in collection.tags %} 
+        {% assign tag_handle = tag | handle %}
+        {% for current_tag in current_tags %} 
+          {% assign current_tag_handle = current_tag | handle %}
+          {% if current_tag_handle == tag_handle %}
+            {% assign current_tag_text = tag %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+      {% if current_tag_text != blank %}
+        collection_tags: ["{{ current_tag_text }}"],
+      {% endif %}
+      default_sort_by: "{{ collection.default_sort_by }}",
+      swatch_extension: "png",
+      no_image_url: "{{ 'bc-sf-filter-no-image.gif' | asset_url }}",
+      adv_size: "{{ section.blocks.size }}",
+      {% for block in section.blocks %}
+        {% assign block_index = block.settings.index | times: 1 %}
+      	
+        {% if block.settings.collection == blank or block.settings.collection == collection.handle %}          
+            {% assign advertisement = block %}
+            adv_{{ forloop.index }}: {
+      			adv_attributes: "{{ block.shopify_attributes }}",      		
+                adv_index: "{{ block_index }}",
+                {% if block.settings.image %}
+                    adv_image: "{{ block.settings.image | img_url: '1280x', format: 'pjpg' }}",
+                {% else%}
+                    adv_color: "{{ block.settings.bg_color }}",
+                {% endif %}      
+                adv_text: "{{ advertisement.settings.text}}",
+                adv_link: "{{ advertisement.settings.link}}",
+                adv_link_text: "{{ advertisement.settings.link_text}}",
+            },
+      		
+        {% endif %}
+      {% endfor %}  
+    },
+    label: {
+      refine: "{{ 'product_filter_search.refine' | t }}",
+      refine_mobile: "{{ 'product_filter_search.refine_mobile' | t }}",
+      clear: "{{ 'product_filter_search.clear' | t }}",
+      clear_all: "{{ 'product_filter_search.clear_all' | t }}",
+      apply: "{{ 'product_filter_search.apply' | t }}",
+      sorting: "{{ 'collection.sort_by.title' | t }}",
+      sorting_featured: "{{ 'collection.sort_by.manual' | t }}",
+      sorting_title_ascending: "{{ 'collection.sort_by.title_ascending' | t }}",
+      sorting_title_descending: "{{ 'collection.sort_by.title_descending' | t }}",
+      sorting_price_ascending: "{{ 'collection.sort_by.price_ascending' | t }}",
+      sorting_price_descending: "{{ 'collection.sort_by.price_descending' | t }}",
+      sorting_date_ascending: "{{ 'collection.sort_by.created_ascending' | t }}",
+      sorting_date_descending: "{{ 'collection.sort_by.created_descending' | t }}",
+      sorting_best_selling: "{{ 'collection.sort_by.best_selling' | t }}",
+      out_of_stock: "{{ 'product.item.availability.out_of_stock' | t }}",
+      on_sale_range_html: "{{ 'product.item.price.on_sale_range_html' | t}}",
+      on_sale_html: "{{ 'product.item.price.on_sale_html' | t }}",
+      range_html: "{{ 'product.item.price.range_html' | t }}",
+      sale: "{{ 'product.item.badges.on_sale' | t }}",
+    },
+    custom: {
+      products_per_page: {{ section.settings.products_per_page }},
+      product_style: "{{ section.settings.product_item_style | default: 'natural' }}",
+      product_cropped: "{{ section.settings.product_item_crop }}",
+      use_quickshop: {{ section.settings.enable_product_quickshop }},
+      use_badges: true,
+      {% for num in (1..6) %}
+        "placeholder_svg_tag_{{ num }}": '{{ 'product-' | append: num | placeholder_svg_tag }}',
+      {% endfor %}
+    }
+  };
+</script>
+
+
+{% schema %}
+{
+  "name": "Collection pages",
+  "class": "section-collection",
+  "settings": [
+    {
+      "type": "select",
+      "id": "products_per_page",
+      "label": "Products per page",
+      "options": [
+        { "value": "10", "label": "10" },
+        { "value": "12", "label": "12" },
+        { "value": "15", "label": "15" },
+        { "value": "20", "label": "20" },
+        { "value": "25", "label": "25" },
+        { "value": "30", "label": "30" },
+        { "value": "35", "label": "35" },
+        { "value": "40", "label": "40" },
+        { "value": "45", "label": "45" },
+        { "value": "50", "label": "50" }
+      ],
+      "default": "12"
+    },
+    {
+      "id": "product_item_style",
+      "type": "select",
+      "label": "Product aspect ratio",
+      "info": "Using an uncropped setting will generate white space around the image to create a uniform grid without cropping your image. The background in the editor indicates the applied white space, but will not appear on your storefront.",
+      "options": [
+        { "group": "Uncropped", "value": "natural", "label": "Natural" },
+        { "group": "Uncropped", "value": "small", "label": "Short (4:3)" },
+        { "group": "Uncropped", "value": "medium", "label": "Square (1:1)" },
+        { "group": "Uncropped", "value": "large", "label": "Tall (2:3)" },
+        { "group": "Cropped", "value": "cropped-small", "label": "Short (4:3)" },
+        { "group": "Cropped", "value": "cropped-medium", "label": "Square (1:1)" },
+        { "group": "Cropped", "value": "cropped-large", "label": "Tall (2:3)" }
+      ],
+      "default": "natural"
+    },
+    {
+      "id": "enable_product_quickshop",
+      "type": "checkbox",
+      "label": "Enable product quickshop",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ad",
+      "name": "Promotion",
+      "settings": [
+		{
+          "id": "image",
+          "type": "image_picker",
+          "label": "Image"
+        },
+      	{
+          "id": "bg_color",
+          "type": "color",
+          "label": "Background Color",
+          "default": "#e0dbd9"
+        },
+        {
+          "id": "collection",
+          "type": "collection",
+          "label": "Collection",
+          "info": "Unless specified, promotion will appear on all collection pages"
+        },
+        {
+          "id": "index",
+          "type": "text",
+          "label": "Display after X products",
+          "default": "10"
+        },
+        {
+          "id": "text",
+          "type": "textarea",
+          "label": "Text",
+          "default": "Promotion text"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "id": "link_text",
+          "type": "text",
+          "label": "Link text",
+          "default": "More info here"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

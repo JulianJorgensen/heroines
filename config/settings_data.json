@@ -1,0 +1,1031 @@
+{
+  "current": {
+    "favicon": "shopify:\/\/shop_images\/Heroines-favicon-montserrat-32x32.png",
+    "color_background": "#ffffff",
+    "color_accent": "#292929",
+    "use_highlighted_menu": true,
+    "color_title_text": "#292929",
+    "color_text": "#292929",
+    "color_button_text": "#ffffff",
+    "font_title": "Google_Montserrat:300,300i,400,400i,700,700i",
+    "font_body": "Google_Karla:400,400i,700,700i",
+    "font_label": "Google_Karla:400,400i,700,700i",
+    "enable_currency_converter": true,
+    "currency_display_format": "money_with_currency_format",
+    "currency_converter_currencies": "USD GBP EUR",
+    "currency_converter_default": "DKK",
+    "social_facebook": "https:\/\/www.facebook.com\/Heroinesdk\/?fref=ts",
+    "social_twitter": "",
+    "social_google": "",
+    "social_pinterest": "",
+    "social_instagram": "https:\/\/www.instagram.com\/Heroinesdk\/",
+    "social_vimeo": "",
+    "social_youtube": "",
+    "social_medium": "",
+    "social_rss": "",
+    "social_email": "hello@heroines.com",
+    "share_widget_facebook": true,
+    "share_widget_twitter": true,
+    "share_widget_pinterest": true,
+    "share_widget_google_plus": false,
+    "share_widget_email": true,
+    "pt_show_refine": true,
+    "pt_show_collection_group": true,
+    "pt_show_clear": true,
+    "pt_show_view_all": true,
+    "pt_show_collection_count": true,
+    "pt_show_show_single_group": true,
+    "pt_single_filter_per_group": true,
+    "pt_show_tags_group": false,
+    "pt_scroll_filter_group": true,
+    "pt_show_inactive_filters": false,
+    "pt_refine_text": "Refine",
+    "pt_clear_text": "clear",
+    "pt_view_all_text": "view all",
+    "pt_tags_text": "Tags",
+    "pt_collection_text": "Collection",
+    "color_pt_header_text": "#222",
+    "color_pt_header_border": "#ddd",
+    "pt_header_size": "18px",
+    "pt_header_font": "none",
+    "color_pt_links": "#222",
+    "color_pt_links_hover": "#333",
+    "pt_links_size": "12px",
+    "pt_links_font": "none",
+    "pt_show_checkboxes": true,
+    "color_pt_clear_bg": "#eee",
+    "color_pt_clear_text": "#222",
+    "color_pt_clear_bg_hover": "#ddd",
+    "color_pt_clear_text_hover": "#222",
+    "pt_small_boxes": "",
+    "color_pt_small_box_bg_hover": "#222",
+    "color_pt_small_box_text_hover": "#fff",
+    "pt_two_columns": "",
+    "pt_color_swatches": "",
+    "pt_color_swatch_type": "swatch",
+    "pt_color_collection_1": "",
+    "pt_color_1": "#111",
+    "pt_color_collection_2": "",
+    "pt_color_2": "#222",
+    "pt_color_collection_3": "",
+    "pt_color_3": "#333",
+    "pt_color_collection_4": "",
+    "pt_color_4": "#444",
+    "pt_color_collection_5": "",
+    "pt_color_5": "#555",
+    "pt_color_collection_6": "",
+    "pt_color_6": "#666",
+    "pt_color_collection_7": "",
+    "pt_color_7": "#777",
+    "pt_color_collection_8": "",
+    "pt_color_8": "#888",
+    "pt_color_collection_9": "",
+    "pt_color_9": "#999",
+    "pt_color_collection_10": "",
+    "pt_color_10": "#aaa",
+    "pt_color_collection_11": "",
+    "pt_color_11": "#bbb",
+    "pt_color_collection_12": "",
+    "pt_color_12": "#ccc",
+    "pt_mobile_enable": true,
+    "pt_mobile_text": "Filter",
+    "pt_mobile_color": "#222",
+    "pt_mobile_max_width": "767px",
+    "pt_mobile_vertical": "0px",
+    "pt_mobile_text_vertical": "0px",
+    "pt_mobile_font": "none",
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/heroines-logo-0004.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "small",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#ffffff",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#000000",
+    "checkout_button_color": "#000000",
+    "checkout_error_color": "#000000",
+    "sections": {
+      "static-header": {
+        "type": "static-header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/LOGO_75e375ca-9140-42bf-8c2e-9892faea206e.png",
+          "logo_width": "",
+          "mobile_logo": "",
+          "mobile_logo_width": "",
+          "menu": "main-menu"
+        }
+      },
+      "site-footer": {
+        "type": "site-footer",
+        "blocks": {
+          "1499674055777": {
+            "type": "richtext",
+            "settings": {
+              "title": "Åbningstider",
+              "content": "<p>Mandag - Torsdag 11 - 18<\/p>\n<p>Fredag 11 - 19<\/p>\n<p>L&oslash;rdag 10 - 17<\/p>"
+            }
+          },
+          "1498744004244": {
+            "type": "menu",
+            "settings": {
+              "menu": "help"
+            }
+          },
+          "1499892746179": {
+            "type": "menu",
+            "settings": {
+              "menu": "virksomheden"
+            }
+          }
+        },
+        "block_order": [
+          "1499674055777",
+          "1498744004244",
+          "1499892746179"
+        ],
+        "settings": {
+          "enable_newsletter": true,
+          "enable_social": false,
+          "enable_payment_icons": true
+        }
+      },
+      "static-collection": {
+        "type": "static-collection",
+        "settings": {
+          "products_per_page": "50",
+          "product_item_style": "natural",
+          "enable_product_quickshop": true
+        }
+      },
+      "static-product": {
+        "type": "static-product",
+        "blocks": {
+          "related-products": {
+            "type": "related_products",
+            "settings": {
+              "product_item_style": "natural",
+              "enable_product_quickshop": false,
+              "product_count": "5",
+              "product_emphasize": false
+            }
+          }
+        },
+        "block_order": [
+          "related-products"
+        ],
+        "settings": {
+          "enable_menu_form": true,
+          "enable_social_sharing": false
+        }
+      },
+      "static-article": {
+        "type": "static-article",
+        "settings": {
+          "enable_social_sharing": true
+        }
+      },
+      "static-blog": {
+        "type": "static-blog",
+        "settings": {
+          "posts_per_page": "4"
+        }
+      },
+      "static-meganav": {
+        "type": "static-meganav",
+        "blocks": {
+          "1499328401903": {
+            "type": "link_list",
+            "settings": {
+              "menu": "mega-menu-col-1",
+              "image": "shopify:\/\/shop_images\/kategori-heroines-1.jpg"
+            }
+          },
+          "1499329557836": {
+            "type": "link_list",
+            "settings": {
+              "menu": "brands",
+              "image": "shopify:\/\/shop_images\/kategori-brands.jpg"
+            }
+          },
+          "1499332311575": {
+            "type": "link_list",
+            "settings": {
+              "menu": "pris",
+              "image": "shopify:\/\/shop_images\/kategori-pris.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "1499328401903",
+          "1499329557836",
+          "1499332311575"
+        ],
+        "settings": {
+          "trigger": "",
+          "show_images": true,
+          "count": "5"
+        }
+      },
+      "static-contactbar": {
+        "type": "static-contactbar",
+        "settings": {
+          "trigger": "Konto",
+          "phone_value": "",
+          "email_value": "hej@heroines.dk",
+          "hours_value": "<p>Mandag - Torsdag 11 - 18<\/p>\n<p>Fredag 11 - 19<\/p>\n<p>L&oslash;rdag 10 - 17<\/p>",
+          "directions_value": "<p>Heroines,&nbsp;Pilestr&aelig;de 37,&nbsp;1112 Kbh. K,&nbsp;<\/p>\n<p>CVR:&nbsp;38254421<\/p>",
+          "directions_map": false,
+          "api_key": "AIzaSyA6iv8kpKqqLM5hkFTdVqn5rGgn2VpXf6Q",
+          "directions_map_zoom": "",
+          "directions_map_color_fg": "#292929",
+          "directions_map_color_bg": "#ffffff"
+        }
+      },
+      "1498723625475": {
+        "type": "dynamic-snappt",
+        "settings": {
+          "title": "Instagram",
+          "subtitle": "Følg os på <a href=\"https:\/\/instagram.com\/Heroinesdk\">Instagram<\/a> eller <a href=\"https:\/\/www.facebook.com\/Heroinesdk\/?fref=ts\">Facebook<\/a>",
+          "script_code": "<script src=\"https:\/\/snapppt.com\/widgets\/widget_loader\/80eb5903-9a32-49e6-9271-678949107289\/grid.js\" class=\"snapppt-widget\"><\/script>"
+        }
+      },
+      "static-cart": {
+        "type": "static-cart",
+        "settings": {
+          "show_notes": true,
+          "notes_placeholder": "Skriv eventuelle specielle instruktioner for din ordre her",
+          "shipping_calculator_default_country": "Danmark"
+        }
+      },
+      "static-meganav-second": {
+        "type": "static-meganav-second",
+        "blocks": {
+          "static-meganav-second-0": {
+            "type": "link_list",
+            "settings": {
+              "menu": "mega-menu-col-2",
+              "image": "shopify:\/\/shop_images\/kategori-heroines-1.jpg"
+            }
+          },
+          "static-meganav-second-1": {
+            "type": "link_list",
+            "settings": {
+              "menu": "brands",
+              "image": "shopify:\/\/shop_images\/kategori-brands.jpg"
+            }
+          },
+          "static-meganav-second-3": {
+            "type": "link_list",
+            "settings": {
+              "menu": "pris",
+              "image": "shopify:\/\/shop_images\/kategori-pris.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "static-meganav-second-0",
+          "static-meganav-second-1",
+          "static-meganav-second-3"
+        ],
+        "settings": {
+          "trigger": "",
+          "show_images": true,
+          "count": "5"
+        }
+      },
+      "static-list-collections": {
+        "type": "static-list-collections",
+        "settings": {
+          "collections_per_page": "9",
+          "collection_item_display_description": false
+        }
+      },
+      "1536853105638": {
+        "type": "single-banner",
+        "disabled": true,
+        "settings": {
+          "image": "shopify:\/\/shop_images\/IMG_4655_copy.jpg",
+          "bg_image": "",
+          "bg_color": "",
+          "alignment": "right",
+          "remove_margins": false,
+          "rich_text": "",
+          "above_title": "",
+          "title": "SHELL SMYKKER",
+          "link": "",
+          "link_text": "Køb"
+        }
+      },
+      "1541078796610": {
+        "type": "dynamic-masonry",
+        "blocks": {
+          "1541078796610-0": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/IMG_3140.JPG",
+              "hover_color": "#000000",
+              "text_color": "#ffffff",
+              "title": "SHOP THE LOOK",
+              "link": "shopify:\/\/pages\/gaveguide",
+              "link_text": "Shop The Look"
+            }
+          },
+          "1541078854356": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Oreringe_web.jpg",
+              "hover_color": "#000000",
+              "text_color": "#ffffff",
+              "title": "ØRERINGE",
+              "link": "shopify:\/\/collections\/oreringe",
+              "link_text": "Shop Øreringe"
+            }
+          },
+          "1541078917898": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Halskaeder_web.jpg",
+              "hover_color": "#000000",
+              "text_color": "#ffffff",
+              "title": "HALSKÆDER",
+              "link": "shopify:\/\/collections\/halskaeder",
+              "link_text": "Shop Halskæder"
+            }
+          },
+          "1541078958192": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Armband_web.jpg",
+              "hover_color": "#000000",
+              "text_color": "#ffffff",
+              "title": "ARMBÅND",
+              "link": "shopify:\/\/collections\/armband",
+              "link_text": "Shop Armbånd"
+            }
+          },
+          "1541078974693": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Heroines_AW18_2018_2714.jpg",
+              "hover_color": "#000000",
+              "text_color": "#ffffff",
+              "title": "RINGE",
+              "link": "shopify:\/\/collections\/ringe",
+              "link_text": "Shop Ringe"
+            }
+          },
+          "1541078989940": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Designere_web.jpg",
+              "hover_color": "#000000",
+              "text_color": "#ffffff",
+              "title": "DESIGNERE",
+              "link": "shopify:\/\/pages\/designere",
+              "link_text": "Se Designere"
+            }
+          },
+          "1541079327264": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Heroines_AW18_2018_2948.jpg",
+              "hover_color": "#000000",
+              "text_color": "#ffffff",
+              "title": "NYHEDER",
+              "link": "shopify:\/\/collections\/nyheder",
+              "link_text": "Se Nyheder"
+            }
+          }
+        },
+        "block_order": [
+          "1541078796610-0",
+          "1541078854356",
+          "1541078917898",
+          "1541078958192",
+          "1541078974693",
+          "1541078989940",
+          "1541079327264"
+        ],
+        "settings": {
+          "title": "",
+          "above_title": "",
+          "below_title": ""
+        }
+      },
+      "1543411040305": {
+        "type": "dynamic-slideshow",
+        "blocks": {
+          "1543411693582": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/By_thiim.JPG",
+              "layout": "default-left",
+              "text_color": "#292929",
+              "before_title": "",
+              "title": "RAINBOW CRUSH",
+              "text": "<p>Til dig der ikke er bange for at udtrykke din stil igennem farver. Vi har udvalgt vores farverige yndlings smykker, som med sikkerhed vil s&aelig;tte et festligt farvepr&aelig;g p&aring; hverdagen.<\/p>",
+              "link": "shopify:\/\/collections\/regnbue-farver-gaveguide",
+              "link_text": "Shop nu"
+            }
+          },
+          "1543411040305-0": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Maanesten_produktbillede.JPG",
+              "layout": "default-left",
+              "text_color": "#292929",
+              "before_title": "",
+              "title": "PEARL CRUSH",
+              "text": "<p>&Aring;rets m&aring;ske hippeste smykketrend er ferskvandsperler i alle t&aelig;nkelige st&oslash;rrelser. En trend som stilikonet, Coco Chanel bragte frem, men som nu er tilg&aelig;ngeligt for alle. Vi elsker alle perlernes variation og deres feminine udtryk.<\/p>",
+              "link": "shopify:\/\/collections\/pearl-crush-gaveguide",
+              "link_text": "Shop nu"
+            }
+          },
+          "1543411040305-1": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Hoops_web_a27f0eee-4594-4347-a449-a455c9abae74.jpg",
+              "layout": "default-left",
+              "text_color": "#292929",
+              "before_title": "",
+              "title": "HOOP LOVER",
+              "text": "<p>Hoops, creoler&hellip; k&aelig;rt barn mange navne. Vi har h&aring;ndplukket de bedste creolere fra vores designere. En tidl&oslash;s og stilsikker klassiker, som h&oslash;rer til i enhver heroines&rsquo; smykke samling.<\/p>",
+              "link": "shopify:\/\/collections\/hoops-gaveguide",
+              "link_text": "Shop nu"
+            }
+          },
+          "1543411888972": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Armband_web_80dd6610-6c69-4cb8-bc98-b612252b5c16.jpg",
+              "layout": "default-left",
+              "text_color": "#292929",
+              "before_title": "",
+              "title": "STATEMENT SMYKKER",
+              "text": "<p>De perfekte smykker til dig der gerne vil skille dig ud fra m&aelig;ngden med et cool smykke. Vi har h&aring;ndplukket statement smykker fra vores skandinaviske designere.<\/p>",
+              "link": "shopify:\/\/collections\/make-a-statement-gaveguide",
+              "link_text": "Shop nu"
+            }
+          }
+        },
+        "block_order": [
+          "1543411693582",
+          "1543411040305-0",
+          "1543411040305-1",
+          "1543411888972"
+        ],
+        "settings": {
+          "autoplay": "6000"
+        }
+      },
+      "1549833370602": {
+        "type": "single-banner",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/42869887_1650849358355083_50068067110696627_n.jpg",
+          "bg_image": "",
+          "bg_color": "",
+          "alignment": "right",
+          "remove_margins": false,
+          "rich_text": "<p>Den nye&nbsp;SS19 kollektion fra Pernille Lauridsen har den smukkeste farvepalette, i et fortryllende univers af perler, rav og sten.<\/p>\n<p><\/p>",
+          "above_title": "Nyhed",
+          "title": "Electrum waves",
+          "link": "shopify:\/\/collections\/electrum-waves-af-pernille-lauridsen",
+          "link_text": "Køb"
+        }
+      },
+      "1549889731386": {
+        "type": "single-banner",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/IMG_3140.JPG",
+          "bg_image": "",
+          "bg_color": "",
+          "alignment": "left",
+          "remove_margins": false,
+          "rich_text": "<p>S&aelig;sonens vigtigste accessory &ndash; perleh&aring;rsp&aelig;ndet!&nbsp;Elegant h&aring;rsp&aelig;nde med perler i akryl. Perfekt til b&aring;de d&aring;rlige&nbsp;og&nbsp;<strong><em>virkelig<\/em><\/strong>&nbsp;gode h&aring;rdage.<\/p>",
+          "above_title": "Trend",
+          "title": "perlehårspænder",
+          "link": "shopify:\/\/collections\/perleharspaender",
+          "link_text": "Køb"
+        }
+      }
+    },
+    "content_for_index": [
+      "1541078796610",
+      "1549833370602",
+      "1549889731386",
+      "1543411040305",
+      "1536853105638",
+      "1498723625475"
+    ]
+  },
+  "presets": {
+    "Light": {
+      "color_background": "#FFFFFF",
+      "color_accent": "#292929",
+      "use_highlighted_menu": false,
+      "color_title_text": "#292929",
+      "color_text": "#292929",
+      "color_button_text": "#FFFFFF",
+      "font_title": "Google_Prata",
+      "font_body": "Google_Karla:400,400i,700,700i",
+      "font_label": "Google_Karla:400,400i,700,700i",
+      "enable_currency_converter": true,
+      "currency_display_format": "money_with_currency_format",
+      "currency_converter_currencies": "INR GBP CAD USD AUD EUR JPY DKK",
+      "currency_converter_default": "DKK",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "Helvetica Neue",
+      "checkout_body_font": "Helvetica Neue",
+      "checkout_accent_color": "#1990C6",
+      "checkout_button_color": "#1990C6",
+      "checkout_error_color": "#ff6d6d",
+      "sections": {
+        "section-1": {
+          "type": "dynamic-slideshow",
+          "blocks": {
+            "slide-1": {
+              "type": "slide",
+              "settings": {
+                "layout": "default-left",
+                "text_color": "#000000"
+              }
+            },
+            "slide-2": {
+              "type": "slide",
+              "settings": {
+                "layout": "default-right",
+                "text_color": "#000000"
+              }
+            },
+            "slide-3": {
+              "type": "slide",
+              "settings": {
+                "layout": "default-left",
+                "text_color": "#292929"
+              }
+            }
+          },
+          "block_order": [
+            "slide-1",
+            "slide-2",
+            "slide-3"
+          ],
+          "settings": {
+            "autoplay": "-1"
+          }
+        },
+        "section-2": {
+          "type": "dynamic-featured-collections",
+          "blocks": {
+            "collection-1": {
+              "type": "collection",
+              "settings": {
+                "alignment": "right",
+                "show_description": true
+              }
+            },
+            "collection-2": {
+              "type": "collection",
+              "settings": {
+                "alignment": "left",
+                "show_description": true
+              }
+            },
+            "collection-3": {
+              "type": "collection",
+              "settings": {
+                "alignment": "right",
+                "show_description": true
+              }
+            }
+          },
+          "block_order": [
+            "collection-1",
+            "collection-2",
+            "collection-3"
+          ],
+          "settings": {}
+        },
+        "section-3": {
+          "type": "dynamic-featured-products",
+          "settings": {
+            "product_item_style": "natural",
+            "product_count": "5",
+            "product_emphasize": true
+          }
+        },
+        "section-4": {
+          "type": "dynamic-blog-posts",
+          "settings": {}
+        },
+        "section-5": {
+          "type": "dynamic-instagram",
+          "settings": {}
+        },
+        "section-6": {
+          "type": "dynamic-twitter",
+          "settings": {}
+        },
+        "static-header": {
+          "type": "static-header",
+          "settings": {}
+        },
+        "site-footer": {
+          "type": "site-footer",
+          "blocks": {
+            "customer": {
+              "type": "customer",
+              "settings": {}
+            },
+            "richtext": {
+              "type": "richtext",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "customer",
+            "richtext"
+          ],
+          "settings": {
+            "enable_newsletter": true
+          }
+        },
+        "static-collection": {
+          "type": "static-collection",
+          "settings": {
+            "product_item_style": "natural"
+          }
+        },
+        "static-product": {
+          "type": "static-product",
+          "blocks": {
+            "related-products": {
+              "type": "related_products",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "related-products"
+          ],
+          "settings": {}
+        },
+        "static-article": {
+          "type": "static-article",
+          "settings": {}
+        },
+        "static-blog": {
+          "type": "static-blog",
+          "settings": {
+            "posts_per_page": "4"
+          }
+        }
+      },
+      "content_for_index": [
+        "section-1",
+        "section-2",
+        "section-3",
+        "section-4",
+        "section-5",
+        "section-6"
+      ]
+    },
+    "Cool": {
+      "color_background": "#FFFFFF",
+      "color_accent": "#32818e",
+      "use_highlighted_menu": true,
+      "color_title_text": "#32818e",
+      "color_text": "#292929",
+      "color_button_text": "#FFFFFF",
+      "font_title": "Google_Poppins:300,400,700",
+      "font_body": "Google_Karla:400,400i,700,700i",
+      "font_label": "Google_Karla:400,400i,700,700i",
+      "enable_currency_converter": true,
+      "currency_display_format": "money_format",
+      "currency_converter_currencies": "CAD USD GBP AUD EUR JPY DKK",
+      "currency_converter_default": "DKK",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "Helvetica Neue",
+      "checkout_body_font": "Helvetica Neue",
+      "checkout_accent_color": "#1990C6",
+      "checkout_button_color": "#1990C6",
+      "checkout_error_color": "#ff6d6d",
+      "sections": {
+        "section-1": {
+          "type": "dynamic-slideshow",
+          "blocks": {
+            "slide-1": {
+              "type": "slide",
+              "settings": {
+                "layout": "default-right",
+                "text_color": "#32818e"
+              }
+            },
+            "slide-2": {
+              "type": "slide",
+              "settings": {
+                "layout": "default-left",
+                "text_color": "#32818e"
+              }
+            },
+            "slide-3": {
+              "type": "slide",
+              "settings": {
+                "layout": "default-right",
+                "text_color": "#32818e"
+              }
+            }
+          },
+          "block_order": [
+            "slide-1",
+            "slide-2",
+            "slide-3"
+          ],
+          "settings": {
+            "autoplay": "6000"
+          }
+        },
+        "section-2": {
+          "type": "dynamic-featured-collections",
+          "blocks": {
+            "collection-1": {
+              "type": "collection",
+              "settings": {
+                "alignment": "left",
+                "show_description": true
+              }
+            },
+            "collection-2": {
+              "type": "collection",
+              "settings": {
+                "alignment": "right",
+                "show_description": true
+              }
+            }
+          },
+          "block_order": [
+            "collection-1",
+            "collection-2"
+          ],
+          "settings": {}
+        },
+        "section-3": {
+          "type": "dynamic-featured-products",
+          "settings": {
+            "title": "Featured Products",
+            "collection": "featured-products",
+            "product_item_style": "cropped-medium",
+            "product_count": "3",
+            "product_emphasize": true
+          }
+        },
+        "section-4": {
+          "type": "dynamic-blog-posts",
+          "settings": {}
+        },
+        "section-5": {
+          "type": "dynamic-instagram",
+          "settings": {}
+        },
+        "section-6": {
+          "type": "dynamic-twitter",
+          "settings": {}
+        },
+        "static-header": {
+          "type": "static-header",
+          "settings": {}
+        },
+        "site-footer": {
+          "type": "site-footer",
+          "blocks": {
+            "customer": {
+              "type": "customer",
+              "settings": {}
+            },
+            "richtext": {
+              "type": "richtext",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "customer",
+            "richtext"
+          ],
+          "settings": {
+            "enable_newsletter": true
+          }
+        },
+        "static-collection": {
+          "type": "static-collection",
+          "settings": {
+            "products_per_page": "12",
+            "product_item_style": "natural"
+          }
+        },
+        "static-product": {
+          "type": "static-product",
+          "settings": {}
+        },
+        "static-article": {
+          "type": "static-article",
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "section-1",
+        "section-3",
+        "section-2",
+        "section-4",
+        "section-5",
+        "section-6"
+      ]
+    },
+    "Fresh": {
+      "color_background": "#f6f6f6",
+      "color_accent": "#657461",
+      "use_highlighted_menu": false,
+      "color_title_text": "#474c46",
+      "color_text": "#6b6b6b",
+      "color_button_text": "#FFFFFF",
+      "font_title": "Google_Roboto+Condensed:400,400i,700,700i",
+      "font_body": "Google_Roboto:300,300i,400,400i,700,700i",
+      "font_label": "Google_Muli:300,300i,400,400i,700,700i",
+      "enable_currency_converter": true,
+      "currency_display_format": "money_format",
+      "currency_converter_currencies": "INR GBP CAD USD AUD EUR JPY DKK",
+      "currency_converter_default": "DKK",
+      "share_widget_facebook": true,
+      "share_widget_twitter": true,
+      "share_widget_pinterest": true,
+      "share_widget_google_plus": true,
+      "share_widget_email": true,
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "Helvetica Neue",
+      "checkout_body_font": "Helvetica Neue",
+      "checkout_accent_color": "#1990C6",
+      "checkout_button_color": "#1990C6",
+      "checkout_error_color": "#ff6d6d",
+      "sections": {
+        "section-1": {
+          "type": "dynamic-slideshow",
+          "blocks": {
+            "slide-1-1": {
+              "type": "slide",
+              "settings": {
+                "layout": "full-width-right",
+                "text_color": "#ffffff"
+              }
+            }
+          },
+          "block_order": [
+            "slide-1-1"
+          ],
+          "settings": {
+            "autoplay": "-1"
+          }
+        },
+        "section-2": {
+          "type": "dynamic-mobile-collections",
+          "settings": {
+            "title": "Browse By",
+            "show_images": false,
+            "type": "tags",
+            "count": "5"
+          }
+        },
+        "section-3": {
+          "type": "dynamic-featured-products",
+          "settings": {
+            "title": "Our Best Sellers",
+            "collection": "frontpage",
+            "product_item_style": "cropped-large",
+            "enable_product_quickshop": true,
+            "product_count": "4",
+            "product_emphasize": false
+          }
+        },
+        "section-4": {
+          "type": "dynamic-slideshow",
+          "blocks": {
+            "slide-4-1": {
+              "type": "slide",
+              "settings": {
+                "layout": "default-right",
+                "text_color": "#474c46"
+              }
+            },
+            "slide-4-2": {
+              "type": "slide",
+              "settings": {
+                "layout": "default-right",
+                "text_color": "#474c46"
+              }
+            },
+            "slide-4-3": {
+              "type": "slide",
+              "settings": {
+                "layout": "default-right",
+                "text_color": "#474c46"
+              }
+            }
+          },
+          "block_order": [
+            "slide-4-1",
+            "slide-4-2",
+            "slide-4-3"
+          ],
+          "settings": {
+            "autoplay": "-1"
+          }
+        },
+        "section-5": {
+          "type": "dynamic-twitter",
+          "settings": {
+            "title": "Twitter",
+            "username": "pixelunion"
+          }
+        },
+        "section-6": {
+          "type": "dynamic-instagram",
+          "settings": {}
+        },
+        "static-article": {
+          "type": "static-article",
+          "settings": {
+            "enable_social_sharing": true
+          }
+        },
+        "static-blog": {
+          "type": "static-blog",
+          "settings": {
+            "posts_per_page": "4"
+          }
+        },
+        "static-collection": {
+          "type": "static-collection",
+          "settings": {
+            "products_per_page": "12",
+            "product_item_style": "cropped-large",
+            "enable_product_quickshop": true
+          }
+        },
+        "static-contactbar": {
+          "type": "static-contactbar",
+          "settings": {
+            "directions_map_color_fg": "#292929",
+            "directions_map_color_bg": "#ffffff"
+          }
+        },
+        "site-footer": {
+          "type": "site-footer",
+          "settings": {
+            "enable_newsletter": true,
+            "enable_social": true,
+            "enable_payment_icons": true
+          }
+        },
+        "static-header": {
+          "type": "static-header",
+          "settings": {}
+        },
+        "static-meganav": {
+          "type": "static-meganav",
+          "settings": {
+            "trigger": "",
+            "show_images": true,
+            "count": "1"
+          }
+        },
+        "static-product": {
+          "type": "static-product",
+          "settings": {
+            "enable_social_sharing": true
+          }
+        }
+      },
+      "content_for_index": [
+        "section-1",
+        "section-2",
+        "section-3",
+        "section-4",
+        "section-5",
+        "section-6"
+      ]
+    }
+  }
+}

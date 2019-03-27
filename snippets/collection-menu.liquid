@@ -1,0 +1,70 @@
+<section class="collection-menu-container{% if settings.use_highlighted_menu %} collection-menu-highlight{% endif %}" data-collection-menu-container>
+  <div class="collection-menu-slideout collection-menu-slideout-sortby" tabindex="-1" data-collection-slideout-sortby>
+    <div class="collection-menu-slideout-header">
+      <span class="collection-menu-slideout-header-title">{{ 'collection.sort_by.title' | t }}</span>
+
+      <span>
+        <button
+          class="collection-menu-slideout-button collection-menu-slideout-button-dimiss"
+          type="button"
+          aria-label="{{ 'general.form.close' | t }}"
+          data-collection-menu-slideout-button-dismiss>
+          {%- include 'icon', id: 'close' -%}
+        </button>
+      </span>
+    </div>
+
+    <section class="collection-menu-slideout-content">
+      {%- assign sort_by_options_string = 'manual|price-ascending|price-descending|title-ascending|title-descending|created-ascending|created-descending|best-selling' -%}
+      {%- assign sort_by_options = sort_by_options_string | split: '|' -%}
+
+      {%- for sort_by in sort_by_options -%}
+        <div class="collection-sortby-option">
+          <input
+            class="collection-sortby-button"
+            type="radio"
+            name="sort-by"
+            value="{{ sort_by }}"
+            data-sortby-option>
+          <label class="collection-sortby-name">{{ 'collection.sort_by.' | append: sort_by | replace: '-', '_' | t }}</label>
+        </div>
+      {%- endfor -%}
+    </section>
+  </div>
+
+
+  <div class="collection-menu">
+    
+
+    <div
+      class="collection-menu-buttons"
+      data-collection-menu-buttons-default>
+      <button class="collection-menu-button show-search-button" type="button">
+        {{ 'collection.refine.button_title' | t }}
+      </button>
+      <div id="bc-sf-filter-top-sorting" class="collection-menu-button collection-menu-button-sortby"></div>
+      <div class="collection-menu-button old-collection-menu-button-sortby">
+        {{ 'collection.sort_by.created_ascending' | t }}
+      </div>
+      
+    </div>
+
+    <div
+      class="collection-menu-buttons"
+      data-collection-menu-buttons-sortby
+      data-collection-menu-buttons-refine>
+      <button
+        class="collection-menu-button collection-menu-button-cancel"
+        type="button"
+        data-collection-menu-button-cancel>
+        {{ 'general.form.cancel' | t }}
+      </button>
+      <button
+        class="collection-menu-button collection-menu-button-apply"
+        type="button"
+        data-collection-menu-button-apply>
+        {{ 'general.form.apply' | t }}
+      </button>
+    </div>
+  </div>
+</section>

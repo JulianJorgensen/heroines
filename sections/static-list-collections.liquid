@@ -1,0 +1,47 @@
+<h1 class="list-collections-title">{{ 'list_collections.title' | t }}</h1>
+
+{%- paginate collections by section.settings.collections_per_page -%}
+  <div class="list-collections">
+      {%- for collection in collections -%}
+        {%- include 'collection-item',
+          collection: collection,
+          display_description: section.settings.collection_item_display_description
+        -%}
+      {%- endfor -%}
+  </div>
+  {%- include 'pagination' -%}
+{%- endpaginate -%}
+
+{% schema %}
+{
+  "name": "Collections list page",
+  "class": "section-list-collections",
+  "settings": [
+    {
+      "type": "select",
+      "id": "collections_per_page",
+      "label": "Collections per page",
+      "options": [
+        { "value": "3", "label": "3" },
+        { "value": "6", "label": "6" },
+        { "value": "9", "label": "9" },
+        { "value": "12", "label": "12" },
+        { "value": "15", "label": "15" },
+        { "value": "18", "label": "18" },
+        { "value": "21", "label": "21" },
+        { "value": "24", "label": "24" },
+        { "value": "27", "label": "27" },
+        { "value": "30", "label": "30" }
+      ],
+      "default": "9"
+    },
+    {
+      "id": "collection_item_display_description",
+      "type": "checkbox",
+      "label": "Show descriptions",
+      "default": false
+    }
+  ]
+}
+
+{% endschema %}
