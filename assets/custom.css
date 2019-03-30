@@ -328,13 +328,30 @@ body, .shopify-section.site-header, public-modal .modal-right-column{background-
 .mobilenav-panel-content .mobilenav-navigation .navmenu-item nav{display: none;}
 .mobilenav-panel-content .mobilenav-navigation .navmenu {padding-left: 0; padding-right: 0;}
 .mobilenav-panel-content .mobilenav-navigation .navmenu-item{padding-left: 16px; padding-right: 16px;}
-.mobilenav-panel-content .mobilenav-navigation .navmenu-id-accessories,.mobilenav-panel-content .mobilenav-navigation .navmenu-id-smykker{position: relative;}
+
+.mobilenav-panel-content .mobilenav-navigation .navmenu-id-accessories,
+.mobilenav-panel-content .mobilenav-navigation .navmenu-id-smykker,
+.mobilenav-panel-content .mobilenav-navigation .navmenu-id-designere
+{position: relative;}
+
 .mobilenav-panel-content .mobilenav-navigation .navmenu-item a{font-size: 12.5px;padding: 8px 0;}
 .mobilenav-panel-content .mobilenav-navigation .navmenu-id-accessories{border-bottom: 1px solid #e6e6e6;padding-bottom: 12px; margin-bottom: 10px;}
-.mobilenav-panel-content .mobilenav-navigation .navmenu-id-accessories a,.mobilenav-panel-content .mobilenav-navigation .navmenu-id-smykker a{font-size: 14px;}
-.mobilenav-panel-content .mobilenav-navigation .navmenu-id-accessories.slide::after, .mobilenav-panel-content .mobilenav-navigation .navmenu-id-smykker.slide::after{display: none;}
-.mobilenav-panel-content .mobilenav-navigation .navmenu-id-accessories .expand-arrow-wrapper,.mobilenav-panel-content .mobilenav-navigation .navmenu-id-smykker .expand-arrow-wrapper {width:32px; height: 32px;position: absolute; top: 0%; right: 6px; text-align: center;}
-.mobilenav-panel-content .mobilenav-navigation .navmenu-id-accessories .expand-arrow,.mobilenav-panel-content .mobilenav-navigation .navmenu-id-smykker .expand-arrow {
+
+.mobilenav-panel-content .mobilenav-navigation .navmenu-id-accessories a,
+.mobilenav-panel-content .mobilenav-navigation .navmenu-id-smykker a,
+.mobilenav-panel-content .mobilenav-navigation .navmenu-id-designere a{font-size: 14px;}
+
+.mobilenav-panel-content .mobilenav-navigation .navmenu-id-accessories.slide::after, 
+.mobilenav-panel-content .mobilenav-navigation .navmenu-id-smykker.slide::after,
+.mobilenav-panel-content .mobilenav-navigation .navmenu-id-designere.slide::after{display: none;}
+
+.mobilenav-panel-content .mobilenav-navigation .navmenu-id-accessories .expand-arrow-wrapper,
+.mobilenav-panel-content .mobilenav-navigation .navmenu-id-smykker .expand-arrow-wrapper,
+.mobilenav-panel-content .mobilenav-navigation .navmenu-id-designere .expand-arrow-wrapper {width:32px; height: 32px;position: absolute; top: 0%; right: 6px; text-align: center;}
+
+.mobilenav-panel-content .mobilenav-navigation .navmenu-id-accessories .expand-arrow,
+.mobilenav-panel-content .mobilenav-navigation .navmenu-id-smykker .expand-arrow,
+.mobilenav-panel-content .mobilenav-navigation .navmenu-id-designere .expand-arrow {
     display: block;
     width: 7px;
     height: 7px;
@@ -357,7 +374,10 @@ body, .shopify-section.site-header, public-modal .modal-right-column{background-
     transition: transform 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
     transition: transform 250ms cubic-bezier(0.215, 0.61, 0.355, 1),-webkit-transform 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.mobilenav-panel-content .mobilenav-navigation .navmenu-id-accessories.slide .expand-arrow,.mobilenav-panel-content .mobilenav-navigation .navmenu-id-smykker.slide .expand-arrow{
+.mobilenav-panel-content .mobilenav-navigation .navmenu-id-accessories.slide .expand-arrow,
+.mobilenav-panel-content .mobilenav-navigation .navmenu-id-smykker.slide .expand-arrow,
+.mobilenav-panel-content .mobilenav-navigation .navmenu-id-designere.slide .expand-arrow
+{
 	-ms-transform: rotate(135deg); /* IE 9 */
     -webkit-transform: rotate(135deg); /* Chrome, Safari, Opera */
     transform: rotate(135deg);

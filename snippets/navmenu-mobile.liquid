@@ -17,16 +17,18 @@
 
   {% for link in linklists[menu].links %}
     {% assign d = depth | plus: 1 %}
-	<li class="navmenu-item navmenu-id-{{ link.handle }}" {% if forloop.index == 1 or forloop.index == 2 %}data-meganav-mobile-target{% endif %}>
-      <a class="navmenu-link" href="{{ link.url }}">{{ link.title }}</a>
-      {% include 'navmenu',
-        menu: link.handle,
-        depth: d,
-        max_depth: max_depth,
-        is_submenu: true
-      %}
-      {% if forloop.index == 1 or forloop.index == 2 %}<span class="expand-arrow-wrapper"><span class="expand-arrow"></span></span>{% endif %}
-      </li>
+	<li class="navmenu-item navmenu-id-{{ link.handle }}" {% if forloop.index == 2 or forloop.index == 4 %} data-meganav-mobile-target{% endif %}>
+    <a class="navmenu-link" href="{{ link.url }}">{{ link.title }}</a>
+    {% include 'navmenu',
+      menu: link.handle,
+      depth: d,
+      max_depth: max_depth,
+      is_submenu: true
+    %}
+    {% if forloop.index == 2 or forloop.index == 4 %}
+      <span class="expand-arrow-wrapper"><span class="expand-arrow"></span></span>
+    {% endif %}
+  </li>
   {% comment %}
     {% if d > max_depth or linklists[link.handle] == blank %}
       

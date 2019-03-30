@@ -228,7 +228,15 @@ deferFilterjQuery();
             } else {
             	$('.mobilenav-panel-content .mobilenav-navigation .navmenu-id-smykker').addClass('slide');
             }
-            
+          });
+
+          $('.mobilenav-panel-content .mobilenav-navigation .navmenu-id-designere .expand-arrow-wrapper').click(function(e){
+            $('.mobilenav-panel-content .mobilenav-navigation .navmenu-id-designere .navmenu').slideToggle();
+            if($('.mobilenav-panel-content .mobilenav-navigation .navmenu-id-designere').hasClass('slide')){
+              $('.mobilenav-panel-content .mobilenav-navigation .navmenu-id-designere').removeClass('slide');
+            } else {
+              $('.mobilenav-panel-content .mobilenav-navigation .navmenu-id-designere').addClass('slide');
+            }
           });
          
           var url = location.href;
