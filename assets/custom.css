@@ -448,7 +448,7 @@ body, .shopify-section.site-header, public-modal .modal-right-column{background-
 
 #shopify-section-section-3 .section-subtitle{display: none;}
 #shopify-section-section-3 .section-title{margin-bottom: 22px; text-transform: uppercase; font-size: 26px; letter-spacing: -1px;}
-.product-item-type, .product-item-type a{color: #000000;text-transform: uppercase; font-size: 14px; font-weight: bold; margin-bottom: 0px;margin-top: 22px; line-height: 12px; text-decoration: none;}
+.product-item-type, .product-item-type a{color: #000000;text-transform: uppercase; font-size: 14px; font-weight: bold; margin-bottom: 0px;margin-top: 14px; line-height: 18px; text-decoration: none;}
 .product-item-title{text-transform: none; font-weight: 400; font-size: 14px; margin-top: 0; margin-bottom: 5px;}
 .product-item-price.product-price{font-size: 14px;}
 
