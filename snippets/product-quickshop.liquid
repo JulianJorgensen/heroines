@@ -48,12 +48,11 @@
                 ">
                 <img
                   alt="{{ image.alt | escape }}"
-                  src="{{ image | img_url: '145x', format: 'pjpg' }}"
-                  srcset="{{ image | img_url: '145x', scale: 2, format: 'pjpg' }} 2x"
+                  data-src="{{ image | img_url: '145x', format: 'pjpg' }}"
+                  data-srcset="{{ image | img_url: '145x', scale: 2, format: 'pjpg' }} 2x"
                   data-product-image-thumb
                   data-product-image-id="{{ image.id }}"
-                  data-src="{{ image | img_url: '1050x', format: 'pjpg' }}"
-                  data-srcset="{{ image | img_url: '1050x', scale: 2, format: 'pjpg' }} 2x">
+                  class="lazyload">
               </figure>
             {%- endfor -%}
             </div>
@@ -79,7 +78,8 @@
           <img
             alt="{{ image.alt | escape }}"
             src="{{ image | img_url: '1050x', format: 'pjpg' }}"
-            srcset="{{ image | img_url: '1050x', scale: 2, format: 'pjpg' }} 2x"
+            data-src="{{ img_url }}"
+            srcset="{{ image | img_url: '1050x', scale: 2, format: 'pjpg' }} 2x" class="lazyload"
             data-product-image-featured>
         </figure>
       </section>

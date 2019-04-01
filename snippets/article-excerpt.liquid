@@ -11,7 +11,8 @@
           <img
             alt="{{ article.image.alt | escape }}"
             src="{{ article.image | img_url: 'x450', format: 'pjpg' }}"
-            srcset="{{ article.image | img_url: 'x450', scale: 2, format: 'pjpg' }} 2x">
+            data-src="{{ img_url }}"
+            srcset="{{ article.image | img_url: 'x450', scale: 2, format: 'pjpg' }} 2x" class="lazyload">
         </a>
       </figure>
     {%- endif -%}

@@ -12,7 +12,8 @@
         class="image-left"
         alt="{{ block.settings.image.alt | escape }}"
         src="{{ block.settings.image | img_url: '450x', format: 'pjpg' }}"
-        srcset="{{ block.settings.image | img_url: '450x', scale: 2, format: 'pjpg' }} 2x">
+        data-src="{{ img_url }}"
+        srcset="{{ block.settings.image | img_url: '450x', scale: 2, format: 'pjpg' }} 2x"  class="lazyload">
     
     <a href="{{block.settings.link}}" style="background-color: {{ block.settings.hover_color }}" class="masonry-hover">
       <div class="masonry-grid-info">

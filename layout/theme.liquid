@@ -56,9 +56,8 @@
   {% endif %}
 <!--end-bc-sf-filter-css-->
      <link rel='stylesheet' href='//cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css' type='text/css' media='all' />
-    <script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://use.typekit.net/pwi1jtw.js"></script>
+    <script defer="defer" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script defer="defer" src="https://use.typekit.net/pwi1jtw.js"></script>
 	<script>try{Typekit.load({ async: false });}catch(e){}</script>
     
 </head>
@@ -97,7 +96,7 @@
       {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
     {%- endif -%}
 
-    <script src="{{ 'handy.js' | asset_url }}"
+    <script defer="defer" src="{{ 'handy.js' | asset_url }}"
       data-scripts
       data-shopify-api-url="{{ 'api.jquery.js' | shopify_asset_url }}"
       data-shopify-cart-url="{{ 'jquery.cart.js' | asset_url }}"
@@ -106,12 +105,14 @@
       data-shopify-qrcode="{{ 'vendor/qrcode.js' | shopify_asset_url }}"
     
     ></script>
-	<script src="{{ 'chosen.jquery.min.js' | asset_url }}"></script>
-    <script src="//cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>
+
+	<script defer="defer" src="{{ 'chosen.jquery.min.js' | asset_url }}"></script>
+    <script defer="defer" src="//cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>
     
     <!-- Initialize Product Filter & Search -->
-    {{ 'bc-sf-filter-lib.bk.js' | asset_url | script_tag }}
-    {{ 'bc-sf-filter.js' | asset_url | script_tag }}
+    <script defer="defer" src="{{ 'bc-sf-filter-lib.bk.js' | asset_url }}"></script>
+    <script defer="defer" src="{{ 'bc-sf-filter.js' | asset_url }}"></script>
+
     <script>
       var bcsffilter = new BCSfFilter();
       bcsffilter.init();
@@ -127,7 +128,7 @@
 </script>
     {% include 'structured-data' %}
   {% unless settings.pt_mobile_enable == false %}
-    <script src="{{ 'chosen.jquery.min.js' | asset_url }}"></script>
+    <script defer="defer" src="{{ 'chosen.jquery.min.js' | asset_url }}"></script>
 <script type="text/javascript">
   
   function deferFilterjQuery() {
@@ -166,7 +167,7 @@ deferFilterjQuery();
 </script>
 {% endunless %}
 {% include 'iwish_v2' with 'iwishfooter' %}
-<script type="text/javascript">
+<script defer="defer" type="text/javascript">
   		var chosen_init = true;
   	    var oos_init = true;
   		var offset = 0;
@@ -494,16 +495,17 @@ deferFilterjQuery();
 	
     </script>
     {% comment %}<script src="{{ 'oos.js' | asset_url }}"></script>{% endcomment %}
-    <script src="{{ 'touchSlider.js' | asset_url }}"></script>
-    <script src="{{ 'custom.js' | asset_url }}"></script>
+    <script defer="defer" src="{{ 'touchSlider.js' | asset_url }}"></script>
+    <script defer="defer" src="{{ 'lazysizes.min.js' | asset_url }}"></script>
     
+    <script defer="defer" src="{{ 'custom.js' | asset_url }}"></script>
     
   {% include 'sweettooth-initializer' %}
 
   {% include 'sweettooth-tab-widget' %}
 	
 {% if product %}
-<script>
+<script defer="defer">
   var boosterParams = boosterParams || {};
   boosterParams.customer = {};
   boosterParams.product = {{ product | json }};

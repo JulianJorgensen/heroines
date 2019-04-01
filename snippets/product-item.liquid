@@ -49,7 +49,9 @@
         <img
           alt="{{ product.featured_image.alt | escape }}"
           src="{{ product.featured_image | img_url: '512x', format: 'pjpg' }}"
+          data-src="{{ img_url }}"
           srcset="{{ product.featured_image | img_url: '512x', scale: 2, format: 'pjpg' }} 2x"
+              {%- if product.available -%} class="lazyload" {%- endif -%}
               {%- if product.available == false -%} class="oos-product" onclick="setupOosForm({{ product.id }})" {%- endif -%}>
       {%- else -%}
         {%- capture index -%}

@@ -21,7 +21,8 @@
         <a href="{{ item.url }}">
           <img
             src="{{ item.image | img_url: '120x', format: 'pjpg' }}"
-            srcset="{{ item.image | img_url: '120x', scale: 2, format: 'pjpg' }} 2x">
+            data-src="{{ img_url }}"
+            srcset="{{ item.image | img_url: '120x', scale: 2, format: 'pjpg' }} 2x"  class="lazyload">
         </a>
       </figure>
     {%- endif -%}

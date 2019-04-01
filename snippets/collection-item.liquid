@@ -22,14 +22,15 @@
       {%- if onboard == false and collection.image -%}
         <img
           alt="{{ collection.image.alt | escape }}"
-          src="{{ collection.image | img_url: '350x', format: 'pjpg' }}"
-          srcset="{{ collection.image | img_url: '350x', scale: 2, format: 'pjpg' }} 2x">
+          data-src="{{ collection.image | img_url: '350x', format: 'pjpg' }}"
+          data-srcset="{{ collection.image | img_url: '350x', scale: 2, format: 'pjpg' }} 2x" class="lazyload">
       {%- elsif onboard == false and collection.products.first.featured_image -%}
         {%- assign product = collection.products.first -%}
         <img
           alt="{{ product.featured_image.alt | escape }}"
           src="{{ product.featured_image | img_url: '350x', format: 'pjpg' }}"
-          srcset="{{ product.featured_image | img_url: '350x', scale: 2, format: 'pjpg' }} 2x">
+          data-src="{{ img_url }}"
+          srcset="{{ product.featured_image | img_url: '350x', scale: 2, format: 'pjpg' }} 2x"  class="lazyload">
       {%- else -%}
         {%- capture index -%}
           {%- cycle '1', '2', '3', '4', '5', '6' -%}
