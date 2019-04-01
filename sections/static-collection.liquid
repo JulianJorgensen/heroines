@@ -143,7 +143,7 @@
               {%- if block_index == index_based_on_page -%}
                 {%- assign advertisement = block -%}
                   {%- if block.settings.image -%}
-                 	<div class="collection-grid-item collection-grid-item-advertisement" {{ block.shopify_attributes }} style="background-image: url('{{ block.settings.image | img_url: '1280x', format: 'pjpg' }}')" data-collection-grid-item>
+                 	<div class="collection-grid-item collection-grid-item-advertisement" {{ block.shopify_attributes }} style="background-image: url('{{ block.settings.image | img_url: '450x', format: 'pjpg' }}')" data-collection-grid-item>
                   {%- else if -%}
                   	<div class="collection-grid-item collection-grid-item-advertisement" {{ block.shopify_attributes }} style="background-color: {{ block.settings.bg_color }}" data-collection-grid-item>
                   {%- else -%}
@@ -225,7 +225,7 @@
       			adv_attributes: "{{ block.shopify_attributes }}",      		
                 adv_index: "{{ block_index }}",
                 {% if block.settings.image %}
-                    adv_image: "{{ block.settings.image | img_url: '1280x', format: 'pjpg' }}",
+                    adv_image: "{{ block.settings.image | img_url: '450x', format: 'pjpg' }}",
                 {% else%}
                     adv_color: "{{ block.settings.bg_color }}",
                 {% endif %}      

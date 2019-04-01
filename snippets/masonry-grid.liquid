@@ -18,11 +18,7 @@
   data-slideshow-slide-layout="{{ block.settings.layout }}"
   {{ block.shopify_attributes }}>
   <figure class="masonry-grid-image figure-left {%- unless block.settings.title -%}full-width{%- endunless -%}">
-    <img 
-        class="image-left"
-        alt="{{ block.settings.image.alt | escape }}"
-        src="{{ block.settings.image | img_url: '1280x', format: 'pjpg' }}"
-        srcset="{{ block.settings.image | img_url: '1280x', scale: 2, format: 'pjpg' }} 2x">
+
     
       <div {% if block.settings.hover_color != blank %} style="background-color: {{ block.settings.hover_color }};"{% endif %} class="bg"></div>
       <div class="masonry-grid-info">

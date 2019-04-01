@@ -10,7 +10,7 @@
         <h2
             class="masonry-grid-title"
             >{{ block.settings.title | escape }}</h2>
-  <figure class="masonry-grid-image figure-left {%- unless block.settings.title -%}full-width{%- endunless -%}" style="background-image: url({{ block.settings.image | img_url: '1280x', format: 'pjpg' }});">  
+  <figure class="masonry-grid-image figure-left {%- unless block.settings.title -%}full-width{%- endunless -%}" style="background-image: url({{ block.settings.image | img_url: '450x', format: 'pjpg' }});">  
       <div {% if block.settings.hover_color != blank %} style="background-color: {{ block.settings.hover_color }};"{% endif %} class="bg"></div>
       <div class="masonry-grid-info">
         <div
