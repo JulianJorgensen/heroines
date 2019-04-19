@@ -286,7 +286,7 @@ div.snize li.snize-no-products-found div.snize-no-products-found-text span a{col
 
 .shopify-section.site-header{position:sticky; top: 0; width: 100%; background-color: #fff; z-index: 10; padding: 9px 0 15px 0; max-width: 100% !important;}
 .site-header .site-header-wrapper{margin: 0 auto; max-width: 1070px;}
-main.site-main{margin-top: 100px; /*overflow: hidden;*/}
+main.site-main{ /*overflow: hidden;*/}
 
 #bc-sf-filter-top-sorting .chosen-container{z-index: 30000; position: absolute !important; top: 0; left: 0; width: 100% !important; max-width: 250px;}
 #bc-sf-filter-top-sorting .chosen-container-single .chosen-single{overflow: visible;display: inline-block; float: right;height: 43px !important; line-height: 43px !important;width: auto !important;max-width: none !important;border-radius: 0 !important; -moz-border-radius: 0 !important; -webkit-border-radius: 0 !important; background: #fff !important; color: #000 !important; border: none !important; box-shadow: none !important;}
@@ -829,7 +829,7 @@ nav.breadcrumb a,nav.breadcrumb span:first-child{display: none;}
 .collection-header.collection-vendor figure.collection-image{position: absolute; left: 0; top: 0;width:100%; max-height: 353px;margin-top: 103px;}
 .collection-header.collection-vendor .collection-header-info{margin-top: 346px;width:100%;max-width:100%;}
 .collection-header.collection-vendor .collection-header-info h1,.collection-header.collection-header-small-font .collection-header-info h1.collection-title{margin-top: 33px;margin-bottom: 17px;font-size: 18px; line-height: 75%;font-weight: bold; color: #000; text-align: center; text-transform: uppercase;}
-.collection-header.collection-header-small-font .collection-header-info h1.collection-title{margin-bottom: 108px;margin-top: 0px;letter-spacing: 0;}
+.collection-header.collection-header-small-font .collection-header-info h1.collection-title{margin-top: 0px;letter-spacing: 0;}
 .collection-header.collection-vendor .collection-header-info .collection-header-description{line-height: 24px;max-width: 805px; margin: 0 auto; text-align: center; font-size: 19px; color: #000; font-weight: 400;}
 .collection-header.collection-vendor .collection-header-info .brands-go-back{display: block; text-align: center;font-size: 15px; font-weight: bold; text-transform: uppercase; color: #000; text-decoration: none;}
 .collection-header.collection-vendor .collection-header-info .brands-go-back img{max-width: 30px;display: inline-block; margin-right: 12px; vertical-align:-2px;}
@@ -3470,7 +3470,7 @@ body .page-contact .contact-form textarea,
 }
 
 main.site-main {
-    margin-top: 156px;
+    margin-top: 40px;
 }
 @media (max-width: 600px) {
   main.site-main {
