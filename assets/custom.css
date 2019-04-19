@@ -1297,8 +1297,6 @@ body #shopify-section-1499769544206.shopify-section.section-single-banner {
   main.site-main {
     overflow: hidden!important;
     position: relative;
-   /*margin-top: 65px;*/
-    margin-top: 90px;
 }
   .meganav {
     margin-top: 0;
@@ -1990,8 +1988,6 @@ body #shopify-section-1499769544206.shopify-section.section-single-banner {
   .page .masthead .masthead-title.page-search-results-page,
   .search-section h1 {
   	font-size: 50px;
-    margin-top: 50px;
-    margin-bottom: 50px;
     line-height: 60px;
   }
   
@@ -2224,13 +2220,7 @@ body #shopify-section-1499769544206.shopify-section.section-single-banner {
 
 
 @media screen and (max-width: 668px) {
-  
-  
-   main.site-main {
-    /*margin-top: 70px;*/
-     margin-top: 100px;
-}
-  
+
   .shopify-section.site-header {
     padding: 10px 0 10px 0;
 }
@@ -2795,7 +2785,7 @@ div.snize div.snize-header {
   .snize-ac-results.snize-ac-results-mobile{display: none !important;}
   
   .shopify-section.site-header{padding: 13px 0 11px;}
-  main.site-main{overflow: hidden;margin-top: 42px;}
+
   .mobilenav-contactbar{bottom: 0;}
   .mobilenav-navigation .navmenu-item.navmenu-id-smykker nav:nth-child(2){display: none !importnat;} 
   .mobilenav-navigation .navmenu-item.navmenu-id-accessories nav:first-child{display: none !importnat;}
@@ -2953,10 +2943,6 @@ div.snize div.snize-header {
   .mobilenav-search-input{
       line-height: 1.5;
   }
-  
-  main.site-main {	
-    margin-top: 55px;
-}
   
   .shopify-section.section-masonry{
   	}
@@ -3474,7 +3460,7 @@ main.site-main {
 }
 @media (max-width: 600px) {
   main.site-main {
-      margin-top: 95px;
+      margin-top: 0px;
   }
 }
 .newsletter-modal {

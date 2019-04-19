@@ -362,7 +362,6 @@ function menuSticky() {
     $('.bc-sf-filter-wrapper-main').css('width','100%');
     if(wMain <= 900) {
       $('.bc-sf-filter-wrapper-main').css('margin-top', '-129px');
-      $('#shopify-section-static-collection').css('padding-top', '129px');
     }
     else{
        $('.bc-sf-filter-wrapper-main').css('margin-top', '-91px');
