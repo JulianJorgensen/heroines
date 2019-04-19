@@ -8,8 +8,7 @@
 #qab_placeholder{background-color: #000!important; color: #fff!important;}
 
 #qab_background{
-  z-index: 1 !important;
-  top: 100px !important;
+  top: 0;
 }
 
 #qab_content{padding: 0px 190px;
@@ -285,7 +284,7 @@ div.snize li.snize-no-products-found div.snize-no-products-found-text span a{col
 /*.bc-sf-filter-option-block.bc-sf-filter-option-block-list.bc-sf-filter-option-block-farve, .bc-sf-filter-option-block.bc-sf-filter-option-block-list.bc-sf-filter-option-block-materiale{width: 15.25% !important;}*/
 .bc-sf-filter-option-block.bc-sf-filter-option-block-list.bc-sf-filter-option-block-pris{width: 15.3% !important;margin-left: 25px !important;}
 
-.shopify-section.site-header{position:fixed; top:0px; width: 100%; background-color: #fff; z-index: 10001; padding: 9px 0 15px 0; max-width: 100% !important;}
+.shopify-section.site-header{position:sticky; top: 0; width: 100%; background-color: #fff; z-index: 10; padding: 9px 0 15px 0; max-width: 100% !important;}
 .site-header .site-header-wrapper{margin: 0 auto; max-width: 1070px;}
 main.site-main{margin-top: 100px; /*overflow: hidden;*/}
 
