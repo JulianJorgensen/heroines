@@ -9,6 +9,7 @@
 
 #qab_background{
   top: 0;
+  z-index: 0 !important;
 }
 
 #qab_content{padding: 0px 190px;
