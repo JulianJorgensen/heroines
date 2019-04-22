@@ -33,11 +33,10 @@
 {%- endcapture -%}
 
 
-{%- if product.available == true -%}
 <article class="
   product-item
   product-item-style-{{ product_style }}
-  {% unless product.featured_image %}product-item-no-image{% endunless %}"
+  {% unless product.featured_image %}product-item-no-image{% endunless %} {% unless product.available %}product-out-of-stock{% endunless %}"
   {%- if product.available != true -%}data-oos-id="{{ product.id }}" {%- endif -%} 
   data-product-item="{{ product.id }}"
   {%- if use_quickshop -%}data-use-quickshop {%- endif -%}
@@ -110,4 +109,3 @@
     {{ product_quickshop_markup | json }}
   </script>
 </article>
-{%- endif -%}

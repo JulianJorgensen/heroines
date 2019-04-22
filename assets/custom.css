@@ -152,6 +152,11 @@ h5.section-subtitle{font-weight: 400; margin-bottom: 30px !important; font-size:
   max-width: 100px;}
 .product-item-badge img{position: absolute; left: 95%; max-width: 35px; height: auto;}
 
+.product-out-of-stock {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
 .section-masonry{margin: 80px auto 0 auto; }
 .masonry .masonry-grid{height: auto; display: block; float: left; margin-right: 56px; margin-bottom: 60px;}
 .masonry .masonry-grid:nth-child(4), .masonry .masonry-grid:nth-child(6), .masonry .masonry-grid:nth-child(11){margin-right: 0;}
