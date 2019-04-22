@@ -1710,6 +1710,16 @@ body #shopify-section-1499769544206.shopify-section.section-single-banner {
   
 }
 
+main.site-main {
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  main.site-main {
+      margin-top: 0px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   
 	
@@ -1719,9 +1729,6 @@ body #shopify-section-1499769544206.shopify-section.section-single-banner {
   	top: 100px;
   }
   .iwishProducts li.iwishItem .iwishImgWrap:after{display: none;}
-  main.site-main{
-  	    margin-top: 105px;
-  }
   
   #shopify-section-static-header{
   	  max-width: 768px!important;
@@ -3456,14 +3463,6 @@ body .page-contact .contact-form textarea,
     color: #fff;
 }
 
-main.site-main {
-    margin-top: 40px;
-}
-@media (max-width: 600px) {
-  main.site-main {
-      margin-top: 0px;
-  }
-}
 .newsletter-modal {
 	color: #000;
 }

@@ -111,8 +111,7 @@
         <div class="product-rte">
           {{ product.description | split: '~section 2~' | first | truncate: 120 }} <a class="read-more" href="{{ product.url | within: collection }}"> Læs mere</a> 
         </div>
-               
-                
+       
       </section>
       {%- include 'product-menu', product: product -%}
     </div>
