@@ -4,13 +4,18 @@
   <div class="product-form-inline-atc">
     {% include 'quantity' %}
 
+
+
+  </div>
+
+  <div class="product-form-inline-buttons-container">
     <button
       class="product-form-inline-atc-button"
       type="submit"
-      data-product-atc
-    >
+      data-product-atc>
       {{ 'product.add_to_cart.available' | t }}
     </button>
+    <div class="product-menu-button product-menu-button-share wishlist desktop">{% include 'iwish_v2' with 'iwishproduct' %}</div>
   </div>
 
 </form>

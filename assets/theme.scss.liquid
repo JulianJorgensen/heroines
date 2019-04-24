@@ -6374,15 +6374,30 @@ $local-photo-gutter: 7px;
     width: 53%;
   }
 
-  > .product-form-inline-atc-button {
+}
+
+.product-form-inline-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  .product-form-inline-atc-button {
     @extend %button;
     float: right;
     width: 47%;
     height: 50px;
-
+    border-radius: 28px;
+    height: 43px;
+    font-size: 17px !important;
+    text-transform: initial;
+    font-weight: initial;
     @include media($max: $breakpoint-l) {
       height: 52px;
     }
+  }
+
+  .wishlist {
+    width: 47%;
+    padding: 0;
+    line-height: 43px;
   }
 }
 

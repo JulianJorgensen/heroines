@@ -84,18 +84,6 @@
 
     {% include 'product-form-nojs' %}
 
-    {% if enable_inline_form %}
-      {% include 'product-form-inline' %}
-    {% endif %}
-
-    {% if enable_inline_form and section.settings.enable_social_sharing %}
-      {% include 'share-buttons' %}
-    {% endif %}
-    {% comment %}
-	<div id="esc-oos-form"></div>
-    {% endcomment %}
-    {% include 'da-restock' %}
-    
     <div class="product-rte">
       <div class="product-rte">
       <div id="tabs"{%- if product.available != true -%} style="margin-top: 20px;" {%- endif -%}>
@@ -120,6 +108,22 @@
        </div>
       </div>
     </div>
+    
+    {% if enable_inline_form %}
+      {% include 'product-form-inline' %}
+    {% endif %}
+
+    {% if enable_inline_form and section.settings.enable_social_sharing %}
+      {% include 'share-buttons' %}
+    {% endif %}
+    {% comment %}
+	<div id="esc-oos-form"></div>
+    {% endcomment %}
+
+    {% comment %}
+    {% include 'da-restock' %}
+    {% endcomment %}
+    
   </section>
 </div>
 
