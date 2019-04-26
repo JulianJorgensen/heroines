@@ -37,8 +37,9 @@
     {% comment %}
       Option inputs
     {% endcomment %}
+    {% assign options_length = product.options_with_values.size %}
     {%- for option in product.options_with_values -%}
-      <div class="option">
+      <div class="option {% if options_length == 3 %} option-three {% elsif options_length ==2 %} option-two {% endif %}" >
         <div class="option-header">
           <span class="option-name">{{ option.name }}</span>
         </div>

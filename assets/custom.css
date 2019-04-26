@@ -102,7 +102,7 @@ body{padding-bottom: 0; overflow-x: hidden;}
 .collection-header.collection-header-no-image{float: none;width: 100%;}
 .banner-insert img{width: 100%;}
 .slideshow-slide-no-text .slideshow-slide-image{max-width: 100%;}
-.wishlist{padding-top: 20px; padding-bottom: 20px;margin-left: 20px; float: right}
+.wishlist{margin-left: 20px; float: right}
 .wishlist a{color: #292929; text-decoration: none;}
 .wishlistLink a{padding: 15px 0; text-decoration: none; font-size: 13px; font-weight: 400; text-transform: uppercase; vertical-align: -3px; color: #000; padding-right: 1px;}
 .wishlist.desktop, .button-desktop{display: block;}
@@ -641,9 +641,11 @@ figure.slideshow-slide-imagefull-width:after, figure.slideshow-slide-image:after
   display: flex;
   justify-content: space-between;
 }  
-.product-quickshop  .product-menu-slideout-content .product-options-type-select .option {
+.product-quickshop  .product-menu-slideout-content .product-options-type-select .option.option-three {
   width: 32%;
-  justify-content: space-between;
+}
+.product-quickshop  .product-menu-slideout-content .product-options-type-select .option.option-two {
+  width: 48%;
 }
 .quantity-input{color: #000;font-weight: bold; font-size: 20px;font-family: "sofia-pro",sans-serif !important;}
 .quantity-decrement, .quantity-increment{border: none; font-weight: bold;padding: 0 15px; font-size: 20px;margin-top: 4px;}
@@ -3448,6 +3450,7 @@ div.snize div.snize-header {
 
 .product-menu-button.product-menu-button-share.wishlist{
 	    background-color: #f6c !important;
+      line-height: 43px;
 }
 
 
